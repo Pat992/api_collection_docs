@@ -1,0 +1,461 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "This Forex API delivers live currency rates, economic news, and both market sentiment indicators and real trader sentiment. Make smarter forex decisions and build powerful applications.",
+    "name": "Forex API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Understand how real forex traders are feeling about the market through current trades.",
+          "name": "Trader Sentiment",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "sentiment",
+                "trader"
+              ],
+              "query": [],
+              "raw": "{{baseUrl}}/v2/sentiment/trader?symbols=eurusd;USDJPY"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/api/forex/v2/sentiment/trader?warning=true\"\n  },\n  \"data\": [\n    {\n      \"longTrades\": {\n        \"percentage\": 28,\n        \"positions\": 16386,\n        \"volumeLots\": 4324.15\n      },\n      \"shortTrades\": {\n        \"percentage\": 72,\n        \"positions\": 34980,\n        \"volumeLots\": 10973.49\n      },\n      \"symbol\": \"EURUSD\",\n      \"totalTrades\": {\n        \"positions\": 51366,\n        \"volumeLots\": 15297.64\n      }\n    },\n    {\n      \"longTrades\": {\n        \"percentage\": 39,\n        \"positions\": 16168,\n        \"volumeLots\": 5050.13\n      },\n      \"shortTrades\": {\n        \"percentage\": 61,\n        \"positions\": 31093,\n        \"volumeLots\": 8051.35\n      },\n      \"symbol\": \"GBPUSD\",\n      \"totalTrades\": {\n        \"positions\": 47261,\n        \"volumeLots\": 13101.48\n      }\n    },\n    {\n      \"longTrades\": {\n        \"percentage\": 34,\n        \"positions\": 4161,\n        \"volumeLots\": 777.37\n      },\n      \"shortTrades\": {\n        \"percentage\": 66,\n        \"positions\": 3999,\n        \"volumeLots\": 1478.04\n      },\n      \"symbol\": \"USDJPY\",\n      \"totalTrades\": {\n        \"positions\": 8160,\n        \"volumeLots\": 2255.41\n      }\n    },\n    {\n      \"longTrades\": {\n        \"percentage\": 20,\n        \"positions\": 1477,\n        \"volumeLots\": 217.3\n      },\n      \"shortTrades\": {\n        \"percentage\": 80,\n        \"positions\": 4727,\n        \"volumeLots\": 889.17\n      },\n      \"symbol\": \"GBPJPY\",\n      \"totalTrades\": {\n        \"positions\": 6204,\n        \"volumeLots\": 1106.47\n      }\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": true,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "sentiment",
+                    "trader"
+                  ],
+                  "query": [],
+                  "raw": "{{baseUrl}}/v2/sentiment/trader?symbols=eurusd;USDJPY"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Gain insights into market sentiment through established metrics from widely used indicators.",
+          "name": "Technical Sentiment",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "sentiment",
+                "technical"
+              ],
+              "query": [],
+              "raw": "{{baseUrl}}/v2/sentiment/technical"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/api/forex/v2/sentiment/technical\"\n  },\n  \"data\": [\n    {\n      \"lastTradePrice\": 0.9249,\n      \"symbol\": \"AUDCAD\",\n      \"todaysOpinion\": \"Buy\",\n      \"todaysOpinionPercentage\": 100\n    },\n    {\n      \"lastTradePrice\": 0.5326,\n      \"symbol\": \"AUDCHF\",\n      \"todaysOpinion\": \"Buy\",\n      \"todaysOpinionPercentage\": 88\n    },\n    {\n      \"lastTradePrice\": 0.57372,\n      \"symbol\": \"AUDEUR\",\n      \"todaysOpinion\": \"Buy\",\n      \"todaysOpinionPercentage\": 100\n    },\n    {\n      \"lastTradePrice\": 0.49608,\n      \"symbol\": \"AUDGBP\",\n      \"todaysOpinion\": \"Buy\",\n      \"todaysOpinionPercentage\": 80\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "sentiment",
+                    "technical"
+                  ],
+                  "query": [],
+                  "raw": "{{baseUrl}}/v2/sentiment/technical"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Sentiment"
+    },
+    {
+      "item": [
+        {
+          "description": "Get all supported countries and volatilities for the `/v2/calendar/get` endpoint.",
+          "name": "Economic Calendar Options",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "calendar",
+                "options"
+              ],
+              "query": [],
+              "raw": "{{baseUrl}}/v2/calendar/options"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/api/forex/v2/calendar/options\"\n  },\n  \"data\": {\n    \"allowedCountries\": [\n      \"us\",\n      \"uk\",\n      \"emu\"\n    ],\n    \"allowedVolatilities\": [\n      \"none\",\n      \"low\",\n      \"medium\",\n      \"high\"\n    ],\n    \"details\": \"`allowedCountries` and `allowedVolatilities` both are case insensitiv...\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "calendar",
+                    "options"
+                  ],
+                  "query": [],
+                  "raw": "{{baseUrl}}/v2/calendar/options"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get upcoming news and economic events.",
+          "name": "Economic Calendar",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "calendar",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Optional**\n\nFilter results by only returning news specific countries, multiple countries are possible, separated by a semicolon (;), if empty, the API will return news for all supported countries.\n\n**Allowed values**\n\nus, uk, emu, de, cn, jp, ca, au, nz, ch, fr, it, es, ua, in, ru, tr, za, br, kr, id, sg, mx, se, no, dk, gr, pt, ie, at, be, nl, fi, cz, pl, hu, ro, cl, co, ar, is, hk, sk, il, sa, vn, kw, eg, ae, qa or th separated by a semicolon (;)",
+                  "key": "includeCountries",
+                  "value": "us;ch;de"
+                },
+                {
+                  "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semikolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
+                  "key": "includeVolatilities",
+                  "value": "none;low;medium;high"
+                },
+                {
+                  "description": "**Optional**\n\nDate of the first calendar entry, if empty, it will be set to one week ago.\n\n**Allowed format**\n\n^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+                  "key": "startDate",
+                  "value": "2026-01-01"
+                },
+                {
+                  "description": "**Optional**\n\nDate of the last calendar entry, if empty, it will be set to today.\n\n**Allowed format**\n\n^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+                  "key": "endDate",
+                  "value": "2026-01-12"
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/calendar/get?includeVolatilities=LOW;MEDIUM;HIGH&includeCountries=CH;US&endDate=2025-09-29&startDate=2025-09-29"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/api/forex/v2/calendar/get?includeVolatilities=HIGH\"\n  },\n  \"data\": [\n    {\n      \"actual\": 50.1,\n      \"consensus\": 49.2,\n      \"countryCode\": \"CN\",\n      \"currencyCode\": \"CNY\",\n      \"dateUtc\": \"2025-12-31T01:30:00Z\",\n      \"id\": \"a16fc136-f85a-422b-9233-9e025ad1d68d\",\n      \"name\": \"NBS Manufacturing PMI\",\n      \"previous\": 49.2,\n      \"revised\": 0.0,\n      \"unit\": \"HIGH\",\n      \"volatility\": \"HIGH\"\n    },\n    {\n      \"actual\": 50.2,\n      \"consensus\": 49.8,\n      \"countryCode\": \"CN\",\n      \"currencyCode\": \"CNY\",\n      \"dateUtc\": \"2025-12-31T01:30:00Z\",\n      \"id\": \"09a13d3b-0487-46b3-b770-20f7fa27c7e4\",\n      \"name\": \"NBS Non-Manufacturing PMI\",\n      \"previous\": 49.5,\n      \"revised\": 0.0,\n      \"unit\": \"HIGH\",\n      \"volatility\": \"HIGH\"\n    },\n    {\n      \"actual\": 50.1,\n      \"consensus\": 0.0,\n      \"countryCode\": \"CN\",\n      \"currencyCode\": \"CNY\",\n      \"dateUtc\": \"2025-12-31T01:45:00Z\",\n      \"id\": \"280eb979-7f29-47af-94fc-6a53466b7cf9\",\n      \"name\": \"RatingDog Manufacturing PMI\",\n      \"previous\": 49.9,\n      \"revised\": 0.0,\n      \"unit\": \"HIGH\",\n      \"volatility\": \"HIGH\"\n    },\n    {\n      \"actual\": 52.0,\n      \"consensus\": 0.0,\n      \"countryCode\": \"CN\",\n      \"currencyCode\": \"CNY\",\n      \"dateUtc\": \"2026-01-05T01:45:00Z\",\n      \"id\": \"9e6ffc7a-146e-4226-a5d1-67ac5d9da27d\",\n      \"name\": \"RatingDog Services PMI\",\n      \"previous\": 52.1,\n      \"revised\": 0.0,\n      \"unit\": \"HIGH\",\n      \"volatility\": \"HIGH\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "calendar",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Optional**\n\nFilter results by only returning news specific countries, multiple countries are possible, separated by a semicolon (;), if empty, the API will return news for all supported countries.\n\n**Allowed values**\n\nus, uk, emu, de, cn, jp, ca, au, nz, ch, fr, it, es, ua, in, ru, tr, za, br, kr, id, sg, mx, se, no, dk, gr, pt, ie, at, be, nl, fi, cz, pl, hu, ro, cl, co, ar, is, hk, sk, il, sa, vn, kw, eg, ae, qa or th separated by a semicolon (;)",
+                      "key": "includeCountries",
+                      "value": "us;ch;de"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semikolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
+                      "key": "includeVolatilities",
+                      "value": "none;low;medium;high"
+                    },
+                    {
+                      "description": "**Optional**\n\nDate of the first calendar entry, if empty, it will be set to one week ago.\n\n**Allowed format**\n\n^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "description": "**Optional**\n\nDate of the last calendar entry, if empty, it will be set to today.\n\n**Allowed format**\n\n^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+                      "key": "endDate",
+                      "value": "2026-01-12"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/calendar/get?includeVolatilities=LOW;MEDIUM;HIGH&includeCountries=CH;US&endDate=2025-09-29&startDate=2025-09-29"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Economic Calendar"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://forex-api2.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "forex-api2.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}

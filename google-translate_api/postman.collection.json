@@ -1,0 +1,258 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "Translation API, powered by Google Translate. With the API, you have the flexibility to choose between a comprehensive response, including alternate writing styles and alternative translations, or a simple and streamlined output for quick and efficient language conversion.",
+    "name": "Google Translate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Get a full translation with additional information, including alternative writing styles, synonyms, definitions and more.",
+          "name": "Full translation",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"input\": \"hello\",\n    \"inputLanguage\": \"en\",\n    \"outputLanguage\": \"fr\"\n}"
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "translate",
+                "full"
+              ],
+              "query": [],
+              "raw": "{{baseUrl}}/v2/translate/full"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/translate/full\"\n  },\n  \"data\": {\n    \"input\": \"hallo\",\n    \"inputAlternatives\": [],\n    \"inputDefinition\": \"\",\n    \"inputLanguage\": \"en\",\n    \"inputSynonyms\": [],\n    \"output\": \"Hola\",\n    \"outputAlternatives\": [],\n    \"outputLanguage\": \"es\",\n    \"outputSynonyms\": []\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"input\": \"hello\",\n    \"inputLanguage\": \"en\",\n    \"outputLanguage\": \"fr\"\n}"
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "translate",
+                    "full"
+                  ],
+                  "query": [],
+                  "raw": "{{baseUrl}}/v2/translate/full"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get a simple and straightforward 1 to 1 translation of the input.",
+          "name": "Minified translation",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"input\": \"hello\",\n    \"inputLanguage\": \"en\",\n    \"outputLanguage\": \"fr\"\n}"
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "translate",
+                "mini"
+              ],
+              "query": [],
+              "raw": "{{baseUrl}}/v2/translate/mini"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/translate/mini\"\n  },\n  \"data\": {\n    \"input\": \"good day\",\n    \"output\": \"Guter Tag\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"input\": \"hello\",\n    \"inputLanguage\": \"en\",\n    \"outputLanguage\": \"fr\"\n}"
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "translate",
+                    "mini"
+                  ],
+                  "query": [],
+                  "raw": "{{baseUrl}}/v2/translate/mini"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Translate"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://google-translate-api9.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "google-translate-api9.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}

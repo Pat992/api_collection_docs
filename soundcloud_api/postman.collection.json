@@ -1,0 +1,1072 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "SoundCloud API. Search for artists, tracks, albums, and playlists. Get detailed info on your favorites and grab stream URLs for listening or downloading.",
+    "name": "Soundcloud API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Find albums by a query, use `/v2/album/get` endpoint for a single album, using the IDs from this endpoint",
+          "name": "Search albums",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "album",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nThe query to find results from.",
+                  "key": "query",
+                  "value": "Marshmello"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/album/search?query=album"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"\",\n    \"self\": \"/v2/album/search?query=savant\"\n  },\n  \"data\": [\n    {\n      \"artistId\": 135929695,\n      \"artworkUrl\": \"\",\n      \"createdAt\": \"2017-03-25T13:33:19Z\",\n      \"description\": \"This is the Full Album Vario by Savant. [I don't own this music]\",\n      \"durationMs\": 4512233,\n      \"genre\": \"Electro\",\n      \"id\": 310254094,\n      \"labelName\": \"\",\n      \"lastModified\": \"2017-04-16T06:51:46Z\",\n      \"license\": \"all-rights-reserved\",\n      \"likesCount\": 42,\n      \"publishedAt\": \"2012-01-15T00:00:00Z\",\n      \"repostsCount\": 5,\n      \"soundcloudUrl\": \"https://api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A310254094\",\n      \"title\": \"Savant - Vario [Full Album]\",\n      \"trackCount\": 16,\n      \"tracks\": [\n        {\n          \"artistId\": 2409289,\n          \"artworkUrl\": \"https://i1.sndcdn.com/artworks-000023027261-roxkbo-large.jpg\",\n          \"caption\": \"\",\n          \"commentCount\": 616,\n          \"createdAt\": \"2012-05-09T04:04:55Z\",\n          \"description\": \"\",\n          \"downloadCount\": 0,\n          \"durationMs\": 297058,\n          \"genre\": \"Electro House\",\n          \"id\": 45784550,\n          \"labelName\": \"SectionZ Records\",\n          \"lastModified\": \"2021-11-10T17:03:18Z\",\n          \"license\": \"all-rights-reserved\",\n          \"likesCount\": 17221,\n          \"permalink\": \"savant-splinter\",\n          \"playbackCount\": 1300587,\n          \"repostsCount\": 2179,\n          \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A45784550\",\n          \"title\": \"Savant - Splinter\",\n          \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n          \"tracks\": [\n            {\n              \"durationMs\": 297058,\n              \"mimeType\": \"audio/mp4; codecs=\\\"mp4a.40.2\\\"\",\n              \"preset\": \"aac_160k\",\n              \"protocol\": \"hls\",\n              \"quality\": \"sq\",\n              \"streamId\": \"soundcloud:tracks:45784550/e66bdde0-d57d-40fc-a142-6f566b55593f/stream/hls\"\n            }\n          ],\n          \"visuals\": []\n        },\n        {\n          \"artistId\": 14087059,\n          \"artworkUrl\": \"https://i1.sndcdn.com/artworks-000020455058-e5rpr8-large.jpg\",\n          \"caption\": \"\",\n          \"commentCount\": 44,\n          \"createdAt\": \"2012-03-24T08:06:40Z\",\n          \"description\": \"\",\n          \"downloadCount\": 0,\n          \"durationMs\": 200248,\n          \"genre\": \"Dubstep, Glitch Hop, Electro House\",\n          \"id\": 40781264,\n          \"labelName\": \"\",\n          \"lastModified\": \"2017-06-19T18:06:29Z\",\n          \"license\": \"all-rights-reserved\",\n          \"likesCount\": 1651,\n          \"permalink\": \"02-savant-vario-original-mix\",\n          \"playbackCount\": 135131,\n          \"repostsCount\": 189,\n          \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A40781264\",\n          \"title\": \"Vario (Original Mix)\",\n          \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n          \"tracks\": [\n            {\n              \"durationMs\": 200248,\n              \"mimeType\": \"audio/mp4; codecs=\\\"mp4a.40.2\\\"\",\n              \"preset\": \"aac_160k\",\n              \"protocol\": \"hls\",\n              \"quality\": \"sq\",\n              \"streamId\": \"soundcloud:tracks:40781264/5eb74492-9d36-4c54-b647-eb1bfe124822/stream/hls\"\n            }\n          ],\n          \"visuals\": []\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 23,\n    \"nextToken\": \"\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "album",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nThe query to find results from.",
+                      "key": "query",
+                      "value": "Marshmello"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/album/search?query=album"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get an album by ID, use the `/v2/album/search` endpoint to search for albums and IDs.",
+          "name": "Get album",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "album",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/album/get?id=4175032607"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/album/get?id=45784550\"\n  },\n  \"data\": {\n    \"artistId\": 99451619,\n    \"artworkUrl\": \"\",\n    \"createdAt\": \"2014-08-04T15:56:09Z\",\n    \"description\": \"\",\n    \"durationMs\": 3053482,\n    \"genre\": \"\",\n    \"id\": 45784550,\n    \"labelName\": \"\",\n    \"lastModified\": \"2014-08-04T15:56:09Z\",\n    \"license\": \"all-rights-reserved\",\n    \"likesCount\": 1,\n    \"publishedAt\": \"\",\n    \"repostsCount\": 1,\n    \"soundcloudUrl\": \"https://api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A45784550\",\n    \"title\": \"Bayrtsengel\",\n    \"trackCount\": 12,\n    \"tracks\": [\n      {\n        \"artistId\": 46214235,\n        \"artworkUrl\": \"https://i1.sndcdn.com/artworks-000058345218-85umeg-large.jpg\",\n        \"caption\": \"\",\n        \"commentCount\": 88,\n        \"createdAt\": \"2013-09-22T02:59:03Z\",\n        \"description\": \"\",\n        \"downloadCount\": 0,\n        \"durationMs\": 240216,\n        \"genre\": \"House\",\n        \"id\": 111654054,\n        \"labelName\": \"\",\n        \"lastModified\": \"2021-01-05T06:52:23Z\",\n        \"license\": \"all-rights-reserved\",\n        \"likesCount\": 8440,\n        \"permalink\": \"animal-martin-garrix\",\n        \"playbackCount\": 861847,\n        \"repostsCount\": 911,\n        \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A111654054\",\n        \"title\": \"Animal - Martin Garrix\",\n        \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n        \"tracks\": [\n          {\n            \"durationMs\": 240216,\n            \"mimeType\": \"audio/mp4; codecs=\\\"mp4a.40.2\\\"\",\n            \"preset\": \"aac_160k\",\n            \"protocol\": \"hls\",\n            \"quality\": \"sq\",\n            \"streamId\": \"soundcloud:tracks:111654054/cf436c2e-01b2-4a4b-9ff5-94ebc316ff80/stream/hls\"\n          }\n        ],\n        \"visuals\": []\n      }\n    ]\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "album",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/album/get?id=4175032607"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Album"
+    },
+    {
+      "item": [
+        {
+          "description": "Find playlists by a query, use `/v2/playlist/get` endpoint for a single playlist, using the IDs from this endpoint",
+          "name": "Search playlists",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "playlist",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nThe query to find results from.",
+                  "key": "query",
+                  "value": "Marshmello"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/playlist/search?query=playlist"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"\",\n    \"self\": \"/v2/playlist/search?query=savant\"\n  },\n  \"data\": [\n    {\n      \"artistId\": 38913086,\n      \"artworkUrl\": \"https://i1.sndcdn.com/artworks-ddAyLnZaEq1Af6TI-gtusqA-large.jpg\",\n      \"createdAt\": \"2019-05-26T03:08:00Z\",\n      \"description\": \"\",\n      \"durationMs\": 6108870,\n      \"genre\": \"Savant\",\n      \"id\": 789349965,\n      \"labelName\": \"\",\n      \"lastModified\": \"2021-07-08T17:59:48Z\",\n      \"license\": \"all-rights-reserved\",\n      \"likesCount\": 58,\n      \"publishedAt\": \"\",\n      \"repostsCount\": 3,\n      \"soundcloudUrl\": \"https://api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A789349965\",\n      \"title\": \"Savant - Alchemist\",\n      \"trackCount\": 22,\n      \"tracks\": [\n        {\n          \"artistId\": 173883661,\n          \"artworkUrl\": \"https://i1.sndcdn.com/artworks-000207829231-22ti54-large.jpg\",\n          \"caption\": \"\",\n          \"commentCount\": 1,\n          \"createdAt\": \"2017-02-15T01:06:42Z\",\n          \"description\": \"A sweet bass house track from Savant...\",\n          \"downloadCount\": 0,\n          \"durationMs\": 309859,\n          \"genre\": \"House\",\n          \"id\": 307792608,\n          \"labelName\": \"\",\n          \"lastModified\": \"2017-12-20T20:14:54Z\",\n          \"license\": \"all-rights-reserved\",\n          \"likesCount\": 229,\n          \"permalink\": \"savant-mother-earth-reupload\",\n          \"playbackCount\": 14050,\n          \"repostsCount\": 12,\n          \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A307792608\",\n          \"title\": \"Savant - Mother Earth [ReUpload]\",\n          \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n          \"tracks\": [\n            {\n              \"durationMs\": 309859,\n              \"mimeType\": \"audio/mp4; codecs=\\\"mp4a.40.2\\\"\",\n              \"preset\": \"aac_160k\",\n              \"protocol\": \"hls\",\n              \"quality\": \"sq\",\n              \"streamId\": \"soundcloud:tracks:307792608/4a90f615-0c63-440d-a58f-2e32b59f88b7/stream/hls\"\n            }\n          ],\n          \"visuals\": []\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 24,\n    \"nextToken\": \"\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "playlist",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nThe query to find results from.",
+                      "key": "query",
+                      "value": "Marshmello"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/playlist/search?query=playlist"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get a playlist by ID, use the `/v2/playlist/search` endpoint to search for playlists and IDs.",
+          "name": "Get playlist",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "playlist",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/playlist/get?id=4175032607"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/playlist/get?id=789349965\"\n  },\n  \"data\": {\n    \"artistId\": 38913086,\n    \"artworkUrl\": \"https://i1.sndcdn.com/artworks-ddAyLnZaEq1Af6TI-gtusqA-large.jpg\",\n    \"createdAt\": \"2019-05-26T03:08:00Z\",\n    \"description\": \"\",\n    \"durationMs\": 6108870,\n    \"genre\": \"Savant\",\n    \"id\": 789349965,\n    \"labelName\": \"\",\n    \"lastModified\": \"2021-07-08T17:59:48Z\",\n    \"license\": \"all-rights-reserved\",\n    \"likesCount\": 58,\n    \"publishedAt\": \"\",\n    \"repostsCount\": 3,\n    \"soundcloudUrl\": \"https://api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A789349965\",\n    \"title\": \"Savant - Alchemist\",\n    \"trackCount\": 22,\n    \"tracks\": [\n      {\n        \"artistId\": 173883661,\n        \"artworkUrl\": \"https://i1.sndcdn.com/artworks-000207829231-22ti54-large.jpg\",\n        \"caption\": \"\",\n        \"commentCount\": 1,\n        \"createdAt\": \"2017-02-15T01:06:42Z\",\n        \"description\": \"A sweet bass house track from Savant...\",\n        \"downloadCount\": 0,\n        \"durationMs\": 309859,\n        \"genre\": \"House\",\n        \"id\": 307792608,\n        \"labelName\": \"\",\n        \"lastModified\": \"2017-12-20T20:14:54Z\",\n        \"license\": \"all-rights-reserved\",\n        \"likesCount\": 229,\n        \"permalink\": \"savant-mother-earth-reupload\",\n        \"playbackCount\": 14050,\n        \"repostsCount\": 12,\n        \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A307792608\",\n        \"title\": \"Savant - Mother Earth [ReUpload]\",\n        \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n        \"tracks\": [\n          {\n            \"durationMs\": 309859,\n            \"mimeType\": \"audio/mp4; codecs=\\\"mp4a.40.2\\\"\",\n            \"preset\": \"aac_160k\",\n            \"protocol\": \"hls\",\n            \"quality\": \"sq\",\n            \"streamId\": \"soundcloud:tracks:307792608/4a90f615-0c63-440d-a58f-2e32b59f88b7/stream/hls\"\n          }\n        ],\n        \"visuals\": []\n      }\n    ]\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "playlist",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/playlist/get?id=4175032607"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Playlist"
+    },
+    {
+      "item": [
+        {
+          "description": "Find tracks by a query, use `/v2/track/get` endpoint for a single track, using the IDs from this endpoint",
+          "name": "Search tracks",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "track",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nThe query to find results from.",
+                  "key": "query",
+                  "value": "Marshmello"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/track/search?query=track"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/track/search?token=cD0xO3E9c2F2YW50\",\n    \"self\": \"/v2/track/search?query=savant\"\n  },\n  \"data\": [\n    {\n      \"artistId\": 1348672314,\n      \"artworkUrl\": \"https://i1.sndcdn.com/artworks-TNYBA5lGWxkTjRxc-BL4WAQ-large.jpg\",\n      \"caption\": \"\",\n      \"commentCount\": 6,\n      \"createdAt\": \"2024-11-22T02:25:21Z\",\n      \"description\": \"t.me/killmylove\",\n      \"downloadCount\": 0,\n      \"durationMs\": 181133,\n      \"genre\": \"Hip-hop & Rap\",\n      \"id\": 1964289683,\n      \"labelName\": \"\",\n      \"lastModified\": \"2025-08-20T15:36:34Z\",\n      \"license\": \"all-rights-reserved\",\n      \"likesCount\": 624,\n      \"permalink\": \"ivycraft-ayena-savant-angels\",\n      \"playbackCount\": 34524,\n      \"repostsCount\": 12,\n      \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A1964289683\",\n      \"title\": \"ivycraft, ayena savant - angels watching from a distance\",\n      \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n      \"tracks\": [\n        {\n          \"durationMs\": 181133,\n          \"mimeType\": \"audio/mpegurl\",\n          \"preset\": \"abr_sq\",\n          \"protocol\": \"hls\",\n          \"quality\": \"sq\",\n          \"streamId\": \"soundcloud:tracks:1964289683/6422f8c8-a1f2-4838-bc0b-f5d851c2b166/stream/hls\"\n        }\n      ],\n      \"visuals\": []\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 25,\n    \"nextToken\": \"cD0xO3E9c2F2YW50\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "track",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nThe query to find results from.",
+                      "key": "query",
+                      "value": "Marshmello"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/track/search?query=track"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get a track by ID, use the `/v2/track/search` endpoint to search for tracks and IDs.",
+          "name": "Get track",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "track",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/track/get?id=4175032607"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/track/get?id=111654054\"\n  },\n  \"data\": {\n    \"artistId\": 46214235,\n    \"artworkUrl\": \"https://i1.sndcdn.com/artworks-000058345218-85umeg-large.jpg\",\n    \"caption\": \"\",\n    \"commentCount\": 88,\n    \"createdAt\": \"2013-09-22T02:59:03Z\",\n    \"description\": \"\",\n    \"downloadCount\": 0,\n    \"durationMs\": 240216,\n    \"genre\": \"House\",\n    \"id\": 111654054,\n    \"labelName\": \"\",\n    \"lastModified\": \"2021-01-05T06:52:23Z\",\n    \"license\": \"all-rights-reserved\",\n    \"likesCount\": 8440,\n    \"permalink\": \"animal-martin-garrix\",\n    \"playbackCount\": 861847,\n    \"repostsCount\": 911,\n    \"soundcloudUrl\": \"https://api.soundcloud.com/tracks/soundcloud%3Atracks%3A111654054\",\n    \"title\": \"Animal - Martin Garrix\",\n    \"trackAuthorization\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n    \"tracks\": [\n      {\n        \"durationMs\": 240216,\n        \"mimeType\": \"audio/mp4; codecs=\\\"mp4a.40.2\\\"\",\n        \"preset\": \"aac_160k\",\n        \"protocol\": \"hls\",\n        \"quality\": \"sq\",\n        \"streamId\": \"soundcloud:tracks:111654054/cf436c2e-01b2-4a4b-9ff5-94ebc316ff80/stream/hls\"\n      }\n    ],\n    \"visuals\": []\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "track",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/track/get?id=4175032607"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Track"
+    },
+    {
+      "item": [
+        {
+          "description": "Find users and artists by a query, use `/v2/user/get` endpoint for a single user, using the IDs from this endpoint",
+          "name": "Search users",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nThe query to find results from.",
+                  "key": "query",
+                  "value": "Marshmello"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/user/search?query=user"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/user/search?token=cD0xO3E9c2F2YW50\",\n    \"self\": \"/v2/user/search?query=savant\"\n  },\n  \"data\": [\n    {\n      \"avatarUrl\": \"https://i1.sndcdn.com/avatars-MyDIDwvBqWsxb03q-1phWFQ-large.jpg\",\n      \"city\": \"https://i1.sndcdn.com/avatars-MyDIDwvBqWsxb03q-1phWFQ-large.jpg\",\n      \"countryCode\": \"\",\n      \"createdAt\": \"2016-03-04T04:49:15Z\",\n      \"description\": \"MGMT: z@zyon.io\",\n      \"firstName\": \"Aleksander\",\n      \"followerCount\": 20447,\n      \"followingCount\": 11,\n      \"id\": 209960820,\n      \"isVerified\": false,\n      \"lastModified\": \"2025-04-25T15:12:20Z\",\n      \"lastName\": \"Aleksander\",\n      \"permalink\": \"savantofficial\",\n      \"playlistCount\": 7,\n      \"soundcloudUrl\": \"https://api.soundcloud.com/users/soundcloud%3Ausers%3A209960820\",\n      \"trackCount\": 183,\n      \"type\": \"user\",\n      \"username\": \"Savant\",\n      \"visuals\": [\n        \"https://i1.sndcdn.com/visuals-000209960820-EL9JHX-original.jpg\"\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 25,\n    \"nextToken\": \"cD0xO3E9c2F2YW50\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "user",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nThe query to find results from.",
+                      "key": "query",
+                      "value": "Marshmello"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/user/search?query=user"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get a user or artist by ID, use the `/v2/user/search` endpoint to search for users and IDs.",
+          "name": "Get user",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/user/get?id=4175032607"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/user/get?id=99685284\"\n  },\n  \"data\": {\n    \"avatarUrl\": \"https://i1.sndcdn.com/avatars-auktj8Y7Qeuun8sL-u9qyFw-large.jpg\",\n    \"city\": \"https://i1.sndcdn.com/avatars-auktj8Y7Qeuun8sL-u9qyFw-large.jpg\",\n    \"countryCode\": \"US\",\n    \"createdAt\": \"2014-06-13T06:02:21Z\",\n    \"description\": \"\",\n    \"firstName\": \"Post Malone\",\n    \"followerCount\": 2272574,\n    \"followingCount\": 11,\n    \"id\": 99685284,\n    \"isVerified\": true,\n    \"lastModified\": \"2025-12-18T15:43:54Z\",\n    \"lastName\": \"Post Malone\",\n    \"permalink\": \"postmalone\",\n    \"playlistCount\": 18,\n    \"soundcloudUrl\": \"https://api.soundcloud.com/users/soundcloud%3Ausers%3A99685284\",\n    \"trackCount\": 190,\n    \"type\": \"user\",\n    \"username\": \"Post Malone\",\n    \"visuals\": [\n      \"https://i1.sndcdn.com/visuals-000099685284-Gi1rUp-original.jpg\"\n    ]\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "user",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the item, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/user/get?id=4175032607"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "User"
+    },
+    {
+      "item": [
+        {
+          "description": "Get a stream or a download by the `streamId` and `trackAuthorization`, to get those values use either the `/v2/track/search` or `/v2/track/get` endpoint.",
+          "name": "Get stream or download",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "stream",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the stream, use the track-endpoints to get this value.",
+                  "key": "streamId",
+                  "value": "soundcloud:tracks:1516134547/96e00d35-0212-4081-b327-bac176d19325/stream/hls"
+                },
+                {
+                  "description": "**Required**\n\nAuthorization of the stream, use the track-endpoints to get this value.",
+                  "key": "trackAuthorization",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJERSIsInN1YiI6IiIsInJpZCI6IjI3NWY0ZWJjLWRiMDItNDVkNi04NzMxLWE0OTU0ZGI3YmExMyIsImlhdCI6MTc2OTk0MjE2MX0.5tl35gVpDdLlNY5-lje8NC_APG5dPFwRy93kiFdEcpM"
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/stream/get?streamId=soundcloud:tracks:15794.../stream/hls&trackAuthorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/stream/get?streamId=soundcloud:tracks...\"\n  },\n  \"data\": {\n    \"streamUrl\": \"https://cf-media.sndcdn.com/E82p48GVrxFp...\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "stream",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the stream, use the track-endpoints to get this value.",
+                      "key": "streamId",
+                      "value": "soundcloud:tracks:1516134547/96e00d35-0212-4081-b327-bac176d19325/stream/hls"
+                    },
+                    {
+                      "description": "**Required**\n\nAuthorization of the stream, use the track-endpoints to get this value.",
+                      "key": "trackAuthorization",
+                      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJERSIsInN1YiI6IiIsInJpZCI6IjI3NWY0ZWJjLWRiMDItNDVkNi04NzMxLWE0OTU0ZGI3YmExMyIsImlhdCI6MTc2OTk0MjE2MX0.5tl35gVpDdLlNY5-lje8NC_APG5dPFwRy93kiFdEcpM"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/stream/get?streamId=soundcloud:tracks:15794.../stream/hls&trackAuthorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Stream"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://soundcloud-api3.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "soundcloud-api3.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}

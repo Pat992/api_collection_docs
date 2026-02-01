@@ -1,0 +1,783 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "Search LinkedIn for jobs, companies and more, easily extract structured data from public LinkedIn pages, no login, cookies, or session management required. This API is ideal for developers, recruiters, data analysts, and job platforms looking to integrate real-time LinkedIn data.",
+    "name": "LinkedIn API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Get a list of jobs, use the `/v1/jobs/get` for full details on a specific job.",
+          "name": "Search and list jobs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "jobs",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                  "key": "query",
+                  "value": "java"
+                },
+                {
+                  "description": "**Optional**\n\nID of organizations like companies and schools the job-postings should be from, use the `Search and list organization IDs` endpoint for valid IDs. Will return everything by default.\n\n**Allowed format**\n\n^\\d+(;\\d+)*;?$",
+                  "key": "organizationIds",
+                  "value": "1441"
+                },
+                {
+                  "description": "**Optional**\n\nLocation of the job offer, like country or city. Will be `Worldwide` if empty.",
+                  "key": "location",
+                  "value": "Worldwide"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to LinkedIn, will return everything by default.\n\n**Allowed values**\n\nmonth, week or day",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\ncontractor, fulltime, parttime, intern or temporary separated by a semicolon (;)",
+                  "key": "employmentTypes",
+                  "value": "contractor;fulltime;parttime;intern;temporary"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by experience-levels, like intern, director, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nintern, entry, associate, midSenior or director separated by a semicolon (;)",
+                  "key": "experienceLevels",
+                  "value": "intern;entry;associate;midSenior;director"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by workplace-types, like remote, hybrid, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nremote, hybrid or onSite separated by a semicolon (;)",
+                  "key": "workplaceTypes",
+                  "value": "remote;hybrid;onSite"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/jobs/search?query=web&location=Switzerland&datePosted=month&jobTypes=contractor;fulltime;parttime;intern;temporary&experienceLevels=intern;entry;associate;midSenior;director&workplaceTypes=remote;hybrid;onSite"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v1/jobs/search?token=dD0xMDtxPXJlYW...\",\n    \"self\": \"/v1/jobs/search?query=react\"\n  },\n  \"data\": [\n    {\n      \"companyName\": \"Netflix\",\n      \"datePosted\": \"2025-12-18\",\n      \"id\": \"4344905017\",\n      \"linkedinCompanyName\": \"netflix\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/hr-coordinator-netflix-animation-studios-at-netflix-4344905017\",\n      \"location\": \"Burbank, CA\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"HR Coordinator - Netflix Animation Studios\"\n    },\n    {\n      \"companyName\": \"Prospect Equities®\",\n      \"datePosted\": \"2025-12-10\",\n      \"id\": \"4342895176\",\n      \"linkedinCompanyName\": \"prospect-equities-\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/front-end-developer-intern-at-prospect-equities%C2%AE-4342895176\",\n      \"location\": \"Chicago, IL\",\n      \"postedTimeAgo\": \"3 weeks ago\",\n      \"title\": \"Front-End Developer Intern\"\n    },\n    {\n      \"companyName\": \"LinkedIn\",\n      \"datePosted\": \"2025-12-17\",\n      \"id\": \"4344456572\",\n      \"linkedinCompanyName\": \"linkedin\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/software-engineer-frontend-at-linkedin-4344456572\",\n      \"location\": \"Mountain View, CA\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"Software Engineer - Frontend\"\n    },\n    {\n      \"companyName\": \"Notion\",\n      \"datePosted\": \"2025-12-19\",\n      \"id\": \"4334367155\",\n      \"linkedinCompanyName\": \"notionhq\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/software-engineer-fullstack-early-career-at-notion-4334367155\",\n      \"location\": \"New York, NY\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"Software Engineer, Fullstack, Early Career\"\n    },\n    {\n      \"companyName\": \"Notion\",\n      \"datePosted\": \"2025-12-19\",\n      \"id\": \"4334158613\",\n      \"linkedinCompanyName\": \"notionhq\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/software-engineer-fullstack-early-career-at-notion-4334158613\",\n      \"location\": \"San Francisco, CA\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"Software Engineer, Fullstack, Early Career\"\n    },\n    {\n      \"companyName\": \"Bounteous\",\n      \"datePosted\": \"2026-01-01\",\n      \"id\": \"4329962289\",\n      \"linkedinCompanyName\": \"bounteous\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/front-end-developer-jr-mid-react-at-bounteous-4329962289\",\n      \"location\": \"United States\",\n      \"postedTimeAgo\": \"2 days ago\",\n      \"title\": \"Front End Developer (Jr-Mid React)\"\n    },\n    {\n      \"companyName\": \"Resonance\",\n      \"datePosted\": \"2026-01-01\",\n      \"id\": \"4350920574\",\n      \"linkedinCompanyName\": \"ssg-advisors\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/front-end-engineer-at-resonance-4350920574\",\n      \"location\": \"New York County, NY\",\n      \"postedTimeAgo\": \"3 days ago\",\n      \"title\": \"Front End Engineer\"\n    },\n    {\n      \"companyName\": \"D3\",\n      \"datePosted\": \"2025-11-16\",\n      \"id\": \"4343087718\",\n      \"linkedinCompanyName\": \"d3inc\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/frontend-engineer-new-grad-at-d3-4343087718\",\n      \"location\": \"Los Angeles, CA\",\n      \"postedTimeAgo\": \"1 month ago\",\n      \"title\": \"Frontend Engineer - New Grad\"\n    },\n    {\n      \"companyName\": \"Saransh Inc\",\n      \"datePosted\": \"2025-12-08\",\n      \"id\": \"4342765629\",\n      \"linkedinCompanyName\": \"saransh-inc-usa\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/ui-react-developer-at-saransh-inc-4342765629\",\n      \"location\": \"Jersey City, NJ\",\n      \"postedTimeAgo\": \"3 weeks ago\",\n      \"title\": \"UI React Developer\"\n    },\n    {\n      \"companyName\": \"Signals\",\n      \"datePosted\": \"2025-12-27\",\n      \"id\": \"4346531130\",\n      \"linkedinCompanyName\": \"signalsai\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/junior-web-developer-at-signals-4346531130\",\n      \"location\": \"Provo, UT\",\n      \"postedTimeAgo\": \"1 week ago\",\n      \"title\": \"Junior Web Developer\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10,\n    \"nextToken\": \"dD0xMDtxPXJlYW...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "jobs",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                      "key": "query",
+                      "value": "java"
+                    },
+                    {
+                      "description": "**Optional**\n\nID of organizations like companies and schools the job-postings should be from, use the `Search and list organization IDs` endpoint for valid IDs. Will return everything by default.\n\n**Allowed format**\n\n^\\d+(;\\d+)*;?$",
+                      "key": "organizationIds",
+                      "value": "1441"
+                    },
+                    {
+                      "description": "**Optional**\n\nLocation of the job offer, like country or city. Will be `Worldwide` if empty.",
+                      "key": "location",
+                      "value": "Worldwide"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to LinkedIn, will return everything by default.\n\n**Allowed values**\n\nmonth, week or day",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\ncontractor, fulltime, parttime, intern or temporary separated by a semicolon (;)",
+                      "key": "employmentTypes",
+                      "value": "contractor;fulltime;parttime;intern;temporary"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by experience-levels, like intern, director, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nintern, entry, associate, midSenior or director separated by a semicolon (;)",
+                      "key": "experienceLevels",
+                      "value": "intern;entry;associate;midSenior;director"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by workplace-types, like remote, hybrid, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nremote, hybrid or onSite separated by a semicolon (;)",
+                      "key": "workplaceTypes",
+                      "value": "remote;hybrid;onSite"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/jobs/search?query=web&location=Switzerland&datePosted=month&jobTypes=contractor;fulltime;parttime;intern;temporary&experienceLevels=intern;entry;associate;midSenior;director&workplaceTypes=remote;hybrid;onSite"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get job details by its ID, use the `/v1/jobs/search` endpoint to search for jobs.",
+          "name": "Get job details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "jobs",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/jobs/get?id=4175032607"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v1/jobs/get?id=4344905017\"\n  },\n  \"data\": {\n    \"acceptingApplications\": true,\n    \"applicants\": 200,\n    \"companyName\": \"Netflix\",\n    \"description\": \"Netflix Animation Studios is on a mission...\",\n    \"employmentType\": \"Full-time\",\n    \"id\": \"4344905017\",\n    \"industries\": \"Entertainment Providers\",\n    \"jobFunction\": \"Other\",\n    \"linkedinCompanyName\": \"netflix\",\n    \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/hr-coordinator-netflix-animation-studios-at-netflix-4344905017\",\n    \"location\": \"Burbank, CA\",\n    \"postedTimeAgo\": \"2 weeks ago\",\n    \"seniorityLevel\": \"Not Applicable\",\n    \"title\": \"HR Coordinator - Netflix Animation Studios\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "jobs",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/jobs/get?id=4175032607"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get a list of organization IDs, use the IDs in the organizationIds in `/v1/jobs/search` to filter by companies or schools.",
+          "name": "Search and list organization IDs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "jobs",
+                "organizations"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nOrganization name or query, can be companies or schools, etc.",
+                  "key": "query",
+                  "value": "google"
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/jobs/organizations?query=google"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v1/jobs/organizations?query=google\"\n  },\n  \"data\": [\n    {\n      \"displayName\": \"Google\",\n      \"id\": 1441\n    },\n    {\n      \"displayName\": \"Google DeepMind\",\n      \"id\": 1594050\n    },\n    {\n      \"displayName\": \"Google Operations Center\",\n      \"id\": 14547137\n    },\n    {\n      \"displayName\": \"Google Fiber\",\n      \"id\": 2171947\n    },\n    {\n      \"displayName\": \"Google for Startups\",\n      \"id\": 18336369\n    },\n    {\n      \"displayName\": \"Google Developers Group\",\n      \"id\": 11162656\n    },\n    {\n      \"displayName\": \"Mandiant (part of Google Cloud)\",\n      \"id\": 28103\n    },\n    {\n      \"displayName\": \"Google Cloud Security\",\n      \"id\": 18451491\n    },\n    {\n      \"displayName\": \"Google Summer of Code\",\n      \"id\": 19184331\n    },\n    {\n      \"displayName\": \"Google Cloud Skills Boost\",\n      \"id\": 98808973\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "jobs",
+                    "organizations"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nOrganization name or query, can be companies or schools, etc.",
+                      "key": "query",
+                      "value": "google"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/jobs/organizations?query=google"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Jobs"
+    },
+    {
+      "item": [
+        {
+          "description": "Get company LinkedIn names and short descriptions, use the `/v1/companies/get` endpoint with the linkedinName to get the full details.",
+          "name": "Search and list companies",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "companies",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nName of the organization to find.",
+                  "key": "query",
+                  "value": "google"
+                },
+                {
+                  "description": "**Optional**\n\nCompanies can create sites for specific countries, use this parameter if you want a page made for a specific country, or leave it to get the default result.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "siteCountryCode",
+                  "value": "de"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as `meta.nextToken`.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/companies/search?query=Google&siteCountryCode=de"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v1/companies/search?query=google\"\n  },\n  \"data\": [\n    {\n      \"companyName\": \"Google - LinkedIn\",\n      \"linkedinName\": \"google\",\n      \"shortDescription\": \"7 Jul 1999...\",\n      \"siteCountryCode\": \"\"\n    },\n    {\n      \"companyName\": \"Google for Startups - LinkedIn\",\n      \"linkedinName\": \"google-for-startups\",\n      \"shortDescription\": \"Google for Startups...\",\n      \"siteCountryCode\": \"\"\n    },\n    {\n      \"companyName\": \"Google Labs | LinkedIn\",\n      \"linkedinName\": \"googlelabs\",\n      \"shortDescription\": \"Google Labs...\",\n      \"siteCountryCode\": \"\"\n    },\n    {\n      \"companyName\": \"Google Operations Center | LinkedIn\",\n      \"linkedinName\": \"googleoperationscenter\",\n      \"shortDescription\": \"Google Operations Center...\",\n      \"siteCountryCode\": \"\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10,\n    \"nextToken\": \"dD11TE1haVlSZlJ5czAyM...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "companies",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nName of the organization to find.",
+                      "key": "query",
+                      "value": "google"
+                    },
+                    {
+                      "description": "**Optional**\n\nCompanies can create sites for specific countries, use this parameter if you want a page made for a specific country, or leave it to get the default result.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "siteCountryCode",
+                      "value": "de"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as `meta.nextToken`.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/companies/search?query=Google&siteCountryCode=de"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get company details by its LinkedIn name, use the `/v1/companies/search` to get valid LinkedIn names.",
+          "name": "Get company details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "companies",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nLinkedIn name of the company, to get allowed values, use the `$path/search` endpoint.",
+                  "key": "linkedinName",
+                  "value": "google"
+                },
+                {
+                  "description": "**Optional**\n\nCompanies can create sites for specific countries, use this parameter if you want a page made for a specific country, or leave it to get the default result.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "siteCountryCode",
+                  "value": "de"
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/companies/get?linkedinName=google&siteCountryCode=de"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v1/companies/get?linkedinName=google\"\n  },\n  \"data\": {\n    \"about\": \"A problem isn't truly solved until it's solved for all...\",\n    \"employees\": \"10,001+\",\n    \"followers\": 40146259,\n    \"funding\": {\n      \"lastRoundDate\": \"1999-07-07\",\n      \"lastRoundFunding\": \"US$ 25.0M\",\n      \"rounds\": \"3 total rounds\"\n    },\n    \"headquarters\": \"Mountain View, CA\",\n    \"id\": 1441,\n    \"industry\": \"Software Development\",\n    \"linkedinCompanyName\": \"Google\",\n    \"linkedinUrl\": \"https://www.linkedin.com/company/google\",\n    \"locations\": [\n      {\n        \"address\": \"1600 Amphitheatre Parkway Mountain View, CA 94043, US\",\n        \"bingDirections\": \"https://www.bing.com/maps?where=1600+Amphitheatre+Parkway+Mountain+View+94043+CA+US&trk=org-locations_url\",\n        \"isPrimary\": true\n      },\n      {\n        \"address\": \"111 8th Ave New York, NY 10011, US\",\n        \"bingDirections\": \"https://www.bing.com/maps?where=111+8th+Ave+New+York+10011+NY+US&trk=org-locations_url\",\n        \"isPrimary\": false\n      },\n      {\n        \"address\": \"Claude Debussylaan 34 Amsterdam, North Holland 1082 MD, NL\",\n        \"bingDirections\": \"https://www.bing.com/maps?where=Claude+Debussylaan+34+Amsterdam+1082+MD+North+Holland+NL&trk=org-locations_url\",\n        \"isPrimary\": false\n      },\n      {\n        \"address\": \"Avenida Brigadeiro Faria Lima, 3477 Sao Paulo, SP 04538-133, BR\",\n        \"bingDirections\": \"https://www.bing.com/maps?where=Avenida+Brigadeiro+Faria+Lima%2C+3477+Sao+Paulo+04538-133+SP+BR&trk=org-locations_url\",\n        \"isPrimary\": false\n      }\n    ],\n    \"organizationType\": \"Public Company\",\n    \"specialities\": [\n      \"search\",\n      \"ads\",\n      \"mobile\",\n      \"android\",\n      \"online video\",\n      \"apps\",\n      \"machine learning\",\n      \"virtual reality\",\n      \"cloud\",\n      \"hardware\",\n      \"artificial intelligence\",\n      \"youtube\",\n      \"software\"\n    ],\n    \"stock\": {\n      \"delay\": \"\",\n      \"growth\": \"\",\n      \"high\": 0.0,\n      \"last_update\": \"\",\n      \"low\": 0.0,\n      \"market\": \"\",\n      \"name\": \"\",\n      \"open\": 0.0,\n      \"price\": \"\"\n    },\n    \"website\": \"https://goo.gle/3DLEokh\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"feedToken\": \"dD0xNDQxOjAtMTc2NzUxNjUwNTY3Ny1lN2JmNjIwMDJkM2Q4OGRjNzg4ZmMyYzJiYzg1YWVlMTtwPTA=\"\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "companies",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nLinkedIn name of the company, to get allowed values, use the `$path/search` endpoint.",
+                      "key": "linkedinName",
+                      "value": "google"
+                    },
+                    {
+                      "description": "**Optional**\n\nCompanies can create sites for specific countries, use this parameter if you want a page made for a specific country, or leave it to get the default result.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "siteCountryCode",
+                      "value": "de"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/companies/get?linkedinName=google&siteCountryCode=de"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get the company feed and posts, including text, videos and images.",
+          "name": "Get company feed",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "companies",
+                "feed"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nGet the token from the `/v1/companies/get` endpoint or from the `meta.nextToken`. Important: This token will expire after some time.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/companies/feed?token=MTEyNDYwODI1Mi5SZXRybw=="
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v1/companies/feed?token=dD0xNDQxOjAtMTc2...\",\n    \"self\": \"/v1/companies/feed?token=dD0xNDQxOjAtMTc2...\"\n  },\n  \"data\": [\n    {\n      \"comments\": 83,\n      \"content\": \"Martina thought she was taking a short break before...\",\n      \"images\": [],\n      \"postedAgo\": \"1d\",\n      \"reactions\": 0,\n      \"videos\": [\n        {\n          \"bitrate\": 699541,\n          \"type\": \"video/mp4\",\n          \"videoUrl\": \"https://dms.licdn.com/playlist/vid/v2/D4E0...\"\n        },\n        {\n          \"bitrate\": 914001,\n          \"type\": \"video/mp4\",\n          \"videoUrl\": \"https://dms.licdn.com/playlist/vid/v2/D4E0...\"\n        }\n      ]\n    },\n    {\n      \"comments\": 116,\n      \"content\": \"Winter mode: activated...\",\n      \"images\": [\n        \"https://media.licdn.com/dms/image/v2/D5610AQF...\",\n        \"https://media.licdn.com/dms/image/v2/D5610AQG...\",\n        \"https://media.licdn.com/dms/image/v2/D5610AQH...\",\n        \"https://media.licdn.com/dms/image/v2/D5610AQE...\"\n      ],\n      \"postedAgo\": \"1w\",\n      \"reactions\": 0,\n      \"videos\": []\n    },\n    {\n      \"comments\": 86,\n      \"content\": \"This week, we expanded the Gemini 3 model...\",\n      \"images\": [],\n      \"postedAgo\": \"2w\",\n      \"reactions\": 0,\n      \"videos\": []\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"companyName\": \"Google\",\n    \"count\": 10,\n    \"linkedinCompanyName\": \"google\",\n    \"nextToken\": \"dD0xNDQxOjAtMTc2...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "companies",
+                    "feed"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nGet the token from the `/v1/companies/get` endpoint or from the `meta.nextToken`. Important: This token will expire after some time.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/companies/feed?token=MTEyNDYwODI1Mi5SZXRybw=="
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Company"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://linkedin-api15.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "linkedin-api15.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}

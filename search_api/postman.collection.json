@@ -1,0 +1,740 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "Search API to find results across multiple Search-engines like Google, Bing, Yahoo or DuckDuckGo",
+    "name": "Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Search Bing and get results in a unified JSON format.",
+          "name": "Search Bing",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "search",
+                "bing"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                  "key": "query",
+                  "value": "test"
+                },
+                {
+                  "description": "**Required if token is not set**\n\nCountry code from what country the results are from.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "us"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nFilter sensitive content, is moderate by default.\n\n**Allowed values**\n\noff, moderate or strict",
+                  "key": "safeSearch",
+                  "value": "off"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/search/bing?query=Test&countryCode=us&datePosted=month&safeSearch=off"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v1/search/bing?token=dD1NVUlEJTVCRVE...\",\n    \"self\": \"/v1/search/bing?query=rust&countryCode=us\"\n  },\n  \"data\": [\n    {\n      \"description\": \"Rust is blazingly fast and memory-efficient…\",\n      \"title\": \"Rust Programming Language\",\n      \"url\": \"https://www.bing.com/ck/a?!&&p=c79...\"\n    },\n    {\n      \"description\": \"The only aim in Rust is to survive...\",\n      \"title\": \"Rust — Explore, Build and Survive\",\n      \"url\": \"https://www.bing.com/ck/a?!&&p=27...\"\n    },\n    {\n      \"description\": \"Rust is a general-purpose programming language…\",\n      \"title\": \"Rust (programming language) - Wikipedia\",\n      \"url\": \"https://www.bing.com/ck/a?!&&p=29...\"\n    },\n    {\n      \"description\": \"The only aim in Rust is to survive...\",\n      \"title\": \"Save 50% on Rust on Steam\",\n      \"url\": \"https://www.bing.com/ck/a?!&&p=50...\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10,\n    \"nextToken\": \"dD1NVUlEJTVCRVE...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "search",
+                    "bing"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                      "key": "query",
+                      "value": "test"
+                    },
+                    {
+                      "description": "**Required if token is not set**\n\nCountry code from what country the results are from.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "us"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter sensitive content, is moderate by default.\n\n**Allowed values**\n\noff, moderate or strict",
+                      "key": "safeSearch",
+                      "value": "off"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/search/bing?query=Test&countryCode=us&datePosted=month&safeSearch=off"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Search DuckDuckGo and get results in a unified JSON format.",
+          "name": "Search DuckDuckGo",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "search",
+                "duckduckgo"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                  "key": "query",
+                  "value": "test"
+                },
+                {
+                  "description": "**Required if token is not set**\n\nCountry code from what country the results are from.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "us"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nFilter sensitive content, is moderate by default.\n\n**Allowed values**\n\noff, moderate or strict",
+                  "key": "safeSearch",
+                  "value": "off"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/search/duckduckgo?query=Test&countryCode=us&datePosted=month&safeSearch=off"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"key\": \"value\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "search",
+                    "duckduckgo"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                      "key": "query",
+                      "value": "test"
+                    },
+                    {
+                      "description": "**Required if token is not set**\n\nCountry code from what country the results are from.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "us"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter sensitive content, is moderate by default.\n\n**Allowed values**\n\noff, moderate or strict",
+                      "key": "safeSearch",
+                      "value": "off"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/search/duckduckgo?query=Test&countryCode=us&datePosted=month&safeSearch=off"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Search Google and get results in a unified JSON format.",
+          "name": "Search Google",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "search",
+                "google"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                  "key": "query",
+                  "value": "test"
+                },
+                {
+                  "description": "**Required if token is not set**\n\nCountry code from what country the results are from.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "us"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nFilter sensitive content, is moderate by default.\n\n**Allowed values**\n\noff, moderate or strict",
+                  "key": "safeSearch",
+                  "value": "off"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/search/google?query=Test&countryCode=us&datePosted=month"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v1/search/google?token=dD1wc2h5TGZ...\",\n    \"self\": \"/v1/search/google?query=rust&countryCode=us\"\n  },\n  \"data\": [\n    {\n      \"description\": \"<b>Rust</b> is blazingly fast and memory-efficient...\",\n      \"title\": \"Rust Programming Language\",\n      \"url\": \"https://rust-lang.org/\"\n    },\n    {\n      \"description\": \"The only aim in <b>Rust</b> is to survive...\",\n      \"title\": \"Rust — Explore, Build and Survive\",\n      \"url\": \"https://rust.facepunch.com/\"\n    },\n    {\n      \"description\": \"The only aim in <b>Rust</b> is to survive...\",\n      \"title\": \"Save 50% on Rust on Steam\",\n      \"url\": \"https://store.steampowered.com/app/252490/Rust/\"\n    },\n    {\n      \"description\": \"It&#39;s a simple terminal tool to test download/upload speeds...\",\n      \"title\": \"The Rust Programming Language - Reddit\",\n      \"url\": \"https://www.reddit.com/r/rust/\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10,\n    \"nextToken\": \"dD1wc2h5TGZ...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "search",
+                    "google"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                      "key": "query",
+                      "value": "test"
+                    },
+                    {
+                      "description": "**Required if token is not set**\n\nCountry code from what country the results are from.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "us"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter sensitive content, is moderate by default.\n\n**Allowed values**\n\noff, moderate or strict",
+                      "key": "safeSearch",
+                      "value": "off"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/search/google?query=Test&countryCode=us&datePosted=month"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Search Yahoo and get results in a unified JSON format.",
+          "name": "Search Yahoo",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "search",
+                "yahoo"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                  "key": "query",
+                  "value": "test"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/search/yahoo?query=Test&datePosted=month"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v1/search/yahoo?token=dD0lNUIlM0El...\",\n    \"self\": \"/v1/search/yahoo?query=rust\"\n  },\n  \"data\": [\n    {\n      \"description\": \"Rust is a fast, memory-safe, and productive...\",\n      \"title\": \"\",\n      \"url\": \"https://rust-lang.org/\"\n    },\n    {\n      \"description\": \"The only aim in Rust is to survive...\",\n      \"title\": \"\",\n      \"url\": \"https://rust.facepunch.com/\"\n    },\n    {\n      \"description\": \"Rust is a general-purpose programming language...\",\n      \"title\": \"\",\n      \"url\": \"https://en.wikipedia.org/wiki/Rust_(programming_language)\"\n    },\n    {\n      \"description\": \"About This GameExploreBuildSurvive\",\n      \"title\": \"\",\n      \"url\": \"https://store.steampowered.com/app/252490/Rust/\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 7,\n    \"nextToken\": \"dD0lNUIlM0El...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "search",
+                    "yahoo"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                      "key": "query",
+                      "value": "test"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/search/yahoo?query=Test&datePosted=month"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Search Yahoo-Japan and get results in a unified JSON format.",
+          "name": "Search Yahoo Japan",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "search",
+                "yahoo-japan"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                  "key": "query",
+                  "value": "test"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by only japanese results, is set to `false` by default\n\n**Allowed values**\n\nfalse or true",
+                  "key": "japaneseOnly",
+                  "value": "false"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/search/yahoo-japan?query=Test&datePosted=month&japaneseOnly=false"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v1/search/yahoo-japan?token=dD07cT1yd...\",\n    \"self\": \"/v1/search/yahoo-japan?query=rust&japaneseOnly=true\"\n  },\n  \"data\": [\n    {\n      \"description\": \"『Rust』における唯一の目的は...\",\n      \"title\": \"Steamで50% OFF：Rust\",\n      \"url\": \"https://store.steampowered.com/app/252490/Rust/?l=japanese\"\n    },\n    {\n      \"description\": \"Rustの豊かな型システム...\",\n      \"title\": \"Rustプログラミング言語\",\n      \"url\": \"https://rust-lang.org/ja/\"\n    },\n    {\n      \"description\": \"Rust（ラスト）は、性能、...\",\n      \"title\": \"Rust (プログラミング言語) - Wikipedia\",\n      \"url\": \"https://ja.wikipedia.org/wiki/Rust...\"\n    },\n    {\n      \"description\": \"2025年11月初開催！1st Closed...\",\n      \"title\": \"今すぐ事前登録！ - Rust Mobile\",\n      \"url\": \"https://www.rustmobile.com/ja/\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10,\n    \"nextToken\": \"dD07cT1yd...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "search",
+                    "yahoo-japan"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nAny Keywords to get results from.",
+                      "key": "query",
+                      "value": "test"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to the search-engine, will return everything by default.",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by only japanese results, is set to `false` by default\n\n**Allowed values**\n\nfalse or true",
+                      "key": "japaneseOnly",
+                      "value": "false"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/search/yahoo-japan?query=Test&datePosted=month&japaneseOnly=false"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Search"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://search-api17.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "search-api17.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}

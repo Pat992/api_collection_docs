@@ -1,0 +1,142 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "Extracts website metadata and/or page body from a given URL, useful for SEO analysis, web scraping, and content summarization.",
+    "name": "Page Summary API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Get website metadata and page content as a JSON.",
+          "name": "Website to JSON",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \"url\": \"https://bbc.com/\",\n    \"getMetadata\": true,\n    \"getBody\": true,\n    \"additionalHeaders\": {\n        \"Cookies\": \"Cookie1;Cookie2\",\n        \"MyHeader\": \"MyHeaderValue\"\n    }\n}"
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "json"
+              ],
+              "query": [],
+              "raw": "{{baseUrl}}/v1/json"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v1/json\"\n  },\n  \"data\": {\n    \"body\": {\n      \"a\": [\n        {\n          \"href\": \"https://www.bbc.com/weather\",\n          \"text\": \"Weather\"\n        },\n        {\n          \"href\": \"https://www.bbc.com/newsletters\",\n          \"text\": \"Newsletters\"\n        },\n        {\n          \"href\": \"https://www.bbc.com/news/live/c5yqygxe41pt\",\n          \"text\": \"LIVEMaduro in custody at New York detention centre as Trump says US will 'run' Venezuela\"\n        },\n        {\n          \"href\": \"/news/articles/czx1rpxzyx9o\",\n          \"text\": \"'Deeply shocked': World leaders react to US attack on Venezuela\"\n        }\n      ],\n      \"h1\": [\n        \"Make me perfect: Manufacturing beauty in China\",\n        \"Is social media dead?\",\n        \"Business Daily meets: Jimmy Choo\",\n        \"Making Jaws\"\n      ],\n      \"h2\": [\n        \"Maduro in custody at New York detention centre as Trump says US will 'run' Venezuela\",\n        \"Who's in charge of Venezuela and what happens next?\",\n        \"'A long road ahead': Venezuelans react to Maduro's arrest with hope and worry\",\n        \"BBC Mundo reports from a quiet Venezuela-Colombia border after Maduro's arrest\"\n      ],\n      \"h3\": [\n        \"The BBC is in multiple languages\"\n      ],\n      \"h4\": [\n        \"'Deeply shocked': World leaders react to US attack on Venezuela\",\n        \"Spies, drones and blowtorches: How the US captured Maduro\",\n        \"Analysis: Venezuela could now define Trump's legacy - and America's place in the world\",\n        \"Read the BBC In your own language\"\n      ],\n      \"h5\": [],\n      \"h6\": [],\n      \"img\": [\n        {\n          \"alt\": \"Venezuela's President Nicolas Maduro at the offices of the U.S. Drug Enforcement Administration (DEA) in New York\",\n          \"src\": \"https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/8de6/live/93bb51e0-e939-11f0-8af9-1d7a0fb391df.jpg.webp\",\n          \"text\": \"\"\n        },\n        {\n          \"alt\": \"Trump at Mar-a-Lago press conference in a suit with blue tie\",\n          \"src\": \"https://ichef.bbci.co.uk/news/480/cpsprodpb/68de/live/f8510680-e93a-11f0-aae2-2191c0e48a3b.jpg.webp\",\n          \"text\": \"\"\n        }\n      ],\n      \"ol\": [],\n      \"p\": [\n        \"Donald Trump says the US will \\\"run\\\" Venezuela until a \\\"safe\\\"...\",\n        \"Caracas residents worry about what comes after US intervention...\",\n        \"A once-busy commercial district at the Venezuela-Colombia border...\",\n        \"RAF Typhoon jets joined French aircraft in a strike on an...\"\n      ],\n      \"table\": [],\n      \"ul\": [\n        {\n          \"items\": [\n            \"Home\",\n            \"News\",\n            \"Sport\",\n            \"Business\"\n          ]\n        },\n        {\n          \"items\": [\n            \"Home\",\n            \"News\",\n            \"Sport\",\n            \"Business\"\n          ]\n        },\n        {\n          \"items\": [\n            \"Terms of Use\",\n            \"Subscription Terms\",\n            \"About the BBC\",\n            \"Privacy Policy\"\n          ]\n        }\n      ]\n    },\n    \"metadata\": {\n      \"author\": \"\",\n      \"canonicalUrl\": \"https://www.bbc.com\",\n      \"charset\": \"utf-8\",\n      \"description\": \"Visit BBC for trusted reporting on the latest world and US news, sports, business, climate, innovation, culture and much more.\",\n      \"faviconUrls\": [\n        \"https://static.files.bbci.co.uk/bbcdotcom/web/20251210-151139-37baf2dfdd-web-2.36.1-1/favicon-32x32.png\",\n        \"https://static.files.bbci.co.uk/bbcdotcom/web/20251210-151139-37baf2dfdd-web-2.36.1-1/favicon-16x16.png\"\n      ],\n      \"keywords\": \"\",\n      \"language\": \"en-GB\",\n      \"ogDescription\": \"Visit BBC for trusted reporting on the latest world and US news, sports, business, climate, innovation, culture and much more.\",\n      \"ogImage\": \"\",\n      \"ogLocale\": \"\",\n      \"ogTitle\": \"BBC Home - Breaking News, World News, US News, Sports, Business, Innovation, Climate, Culture, Travel, Video & Audio\",\n      \"ogUrl\": \"\",\n      \"title\": \"BBC Home - Breaking News, World News, US News, Sports, Business, Innovation, Climate, Culture, Travel, Video & Audio\",\n      \"viewport\": \"width=device-width\"\n    }\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"responseCode\": 200\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"url\": \"https://bbc.com/\",\n    \"getMetadata\": true,\n    \"getBody\": true,\n    \"additionalHeaders\": {\n        \"Cookies\": \"Cookie1;Cookie2\",\n        \"MyHeader\": \"MyHeaderValue\"\n    }\n}"
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "json"
+                  ],
+                  "query": [],
+                  "raw": "{{baseUrl}}/v1/json"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "summary"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://page-summary-api.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "page-summary-api.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}

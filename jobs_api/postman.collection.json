@@ -1,0 +1,1400 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "This API allows you to discover employment opportunities from various providers, as well as income information.",
+    "name": "Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Get a list of jobs, use the `/v2/bing/get` for more information on a specific job.",
+          "name": "Search and list jobs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "bing",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                  "key": "query",
+                  "value": "Java"
+                },
+                {
+                  "description": "**Required if token is not set**\n\nLocation of the job offer, like country or city in any combination.",
+                  "key": "location",
+                  "value": "Switzerland"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to Bing, will return everything by default.\n\n**Allowed values**\n\nweek, day or empty",
+                  "key": "datePosted",
+                  "value": "week"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything if not set.\n\n**Allowed values**\n\ncontractor, fulltime, parttime or temporary separated by a semicolon (;)",
+                  "key": "employmentTypes",
+                  "value": "contractor;fulltime;parttime;temporary"
+                },
+                {
+                  "description": "**Optional**\n\nBoolean to get only remote-jobs, will default to `false` if not set.\n\n**Allowed values**\n\ntrue or false",
+                  "key": "remoteOnly",
+                  "value": "false"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/bing/search?location=zurich&query=java&datePosted=day"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/bing/search?token=dD0yNDhDMkM1OTc..\",\n    \"self\": \"/v2/bing/search?location=switzerland&query=flutter\"\n  },\n  \"data\": [\n    {\n      \"company\": \"ETHjuniors\",\n      \"employmentType\": \"Full-time\",\n      \"id\": \"LTg3NDcyOTQ2Mi5SZXRybw==\",\n      \"image\": \"https://th.bing.com/th/id/OJA.-1678676695NS?w=24&h=24&o=6&pid=JobAns\",\n      \"jobProvider\": \"Jobrapido\",\n      \"location\": \"Zug, ZG\",\n      \"postedTimeAgo\": \"6 November\",\n      \"title\": \"Flutter Developer\"\n    },\n    {\n      \"company\": \"ETHjuniors\",\n      \"employmentType\": \"\",\n      \"id\": \"LTE0OTkxMjc1MDUuUmV0cm8=\",\n      \"image\": \"https://th.bing.com/th/id/OJA.-1678676695NS?w=24&h=24&o=6&pid=JobAns\",\n      \"jobProvider\": \"Bebee::Jobrapido\",\n      \"location\": \"Zug, ZG\",\n      \"postedTimeAgo\": \"6 November\",\n      \"title\": \"Flutter Developer\"\n    },\n    {\n      \"company\": \"Circleup\",\n      \"employmentType\": \"Full-time\",\n      \"id\": \"NzMzOTA3MzkyLlJldHJv\",\n      \"image\": \"\",\n      \"jobProvider\": \"Jobrapido\",\n      \"location\": \"Bern, BE\",\n      \"postedTimeAgo\": \"17 October\",\n      \"title\": \"Lead Full-Stack SW Engineer & Partner (Base Salary & Equity) - (Django & Flutter/React)\"\n    },\n    {\n      \"company\": \"Pixel Plus AG\",\n      \"employmentType\": \"\",\n      \"id\": \"NjY1NTMzMDQzLlJldHJv\",\n      \"image\": \"https://th.bing.com/th/id/OJA.1654796514NS?w=24&h=24&o=6&pid=JobAns\",\n      \"jobProvider\": \"Bebee\",\n      \"location\": \"ZH\",\n      \"postedTimeAgo\": \"1 day ago\",\n      \"title\": \"Flutter Developer For Finance App\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 18,\n    \"nextToken\": \"dD0yNDhDMkM1OTc..\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "bing",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                      "key": "query",
+                      "value": "Java"
+                    },
+                    {
+                      "description": "**Required if token is not set**\n\nLocation of the job offer, like country or city in any combination.",
+                      "key": "location",
+                      "value": "Switzerland"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to Bing, will return everything by default.\n\n**Allowed values**\n\nweek, day or empty",
+                      "key": "datePosted",
+                      "value": "week"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything if not set.\n\n**Allowed values**\n\ncontractor, fulltime, parttime or temporary separated by a semicolon (;)",
+                      "key": "employmentTypes",
+                      "value": "contractor;fulltime;parttime;temporary"
+                    },
+                    {
+                      "description": "**Optional**\n\nBoolean to get only remote-jobs, will default to `false` if not set.\n\n**Allowed values**\n\ntrue or false",
+                      "key": "remoteOnly",
+                      "value": "false"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/bing/search?location=zurich&query=java&datePosted=day"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get job details by its ID, use the `/v2/bing/search` endpoint to search for jobs and get valid IDs.",
+          "name": "Get job details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "bing",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/bing/search` endpoint.",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/bing/get?id=MTEyNDYwODI1Mi5SZXRybw=="
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/bing/get?id=LTE0OTY4MTM0NDIuUmV0cm8=\"\n  },\n  \"data\": {\n    \"applyUrl\": \"https://ch.linkedin.com/jobs/view/senior-mobile-software-engineer-–-fokus-flutter-und-android-at-ti-m-4268105808?trk=bingjobs\",\n    \"companyName\": \"ti&m\",\n    \"description\": \"Job description Werde Teil unserer Organisation...\",\n    \"descriptionHtml\": \"<div class=\\\"jbpnl_descrt_label\\\"><h3>Job description</h3></div><div aria-label=\\\"Job description\\\" class=\\\"jbpnl_description jb_selectable\\\" role=\\\"region\\\" tabindex=\\\"0\\\"><em>Werde Teil unserer Organisation...\",\n    \"employmentType\": \"Part-time\",\n    \"id\": \"LTE0OTY4MTM0NDIuUmV0cm8=\",\n    \"location\": \"Zürich, ZH\",\n    \"postedTimeAgo\": \"15 July\",\n    \"title\": \"Senior Mobile Software Engineer – Fokus Flutter Und Android\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "bing",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/bing/search` endpoint.",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/bing/get?id=MTEyNDYwODI1Mi5SZXRybw=="
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Job search Bing"
+    },
+    {
+      "item": [
+        {
+          "description": "Get a list of job from Indeed.",
+          "name": "Search and list jobs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "indeed",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                  "key": "query",
+                  "value": "Java"
+                },
+                {
+                  "description": "**Optional**\n\nLocation of the job offer, like city, towns or provinces.",
+                  "key": "location",
+                  "value": "Zurich"
+                },
+                {
+                  "description": "**Required if token is not set**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "ch"
+                },
+                {
+                  "description": "**Optional**\n\nSorting of the results, can either be by `relevance` or by `date`, will be set to `relevance` by default.\n\n**Allowed values**\n\nrelevance or date",
+                  "key": "sortType",
+                  "value": "relevance"
+                },
+                {
+                  "description": "**Optional**\n\nDistance of the job offers from the location.\n\n**Allowed format**\n\n^[0-9]+$",
+                  "key": "radius",
+                  "value": "20"
+                },
+                {
+                  "description": "**Optional**\n\nType of the distance, can either be `km` or `miles`, will be set to `km` by default.\n\n**Allowed values**\n\nkm or miles",
+                  "key": "radiusType",
+                  "value": "km"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/indeed/search?location=zurich&query=java&countryCode=ch"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/indeed/search?token=dD1BQlFBQVFBVUFBQUFBQ...\",\n    \"self\": \"/v2/indeed/search?countryCode=us&query=java\"\n  },\n  \"data\": [\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/Jo4WXZskvtPZ9WgFwqnpCUVCv-vN0fkkJ6ip_S65XSY=\",\n      \"company\": {\n        \"addresses\": [\n          \"Bethesda, MD\"\n        ],\n        \"image\": \"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/debbff68624041821d0c56fbccbcc330\",\n        \"name\": \"Lockheed Martin\"\n      },\n      \"dateOnIndeedTimestamp\": -2023594907,\n      \"datePublishedTimestamp\": -749158656,\n      \"description\": \"Job ID: 691465BR\\nDate posted: Nov. 30, 2025...\",\n      \"id\": \"56a1b7550fa78bba\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"King of Prussia, PA\"\n      },\n      \"title\": \"Java Software Engineer III\"\n    },\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/q7vuN9iOmz3dRG2xAe7KoxP7I6Z7SQdG-wpiMdJf9nw=\",\n      \"company\": {\n        \"addresses\": [\n          \"Bethesda, MD\"\n        ],\n        \"image\": \"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/debbff68624041821d0c56fbccbcc330\",\n        \"name\": \"Lockheed Martin\"\n      },\n      \"dateOnIndeedTimestamp\": -2023595367,\n      \"datePublishedTimestamp\": -749158656,\n      \"description\": \"Job ID: 698997BR\\nDate posted: Nov. 30, 2025...\",\n      \"id\": \"6c588ac5af1876cc\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"King of Prussia, PA\"\n      },\n      \"title\": \"Java Software Engineer III- Space Mission Applications\"\n    },\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/TgmDjYI9cOSltDS4D0tQ4RxKivariwQLFIXeX5CIrPk=\",\n      \"company\": {\n        \"addresses\": [],\n        \"image\": \"\",\n        \"name\": \"GEICO\"\n      },\n      \"dateOnIndeedTimestamp\": -2023807598,\n      \"datePublishedTimestamp\": -2106525952,\n      \"description\": \"At GEICO, we offer a rewarding career...\",\n      \"id\": \"5f9b5f874e6ab3a5\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"Chevy Chase, MD\"\n      },\n      \"title\": \"Staff Engineer - Applied AI\"\n    },\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/oP7qQFlODRAEfszK6tVzUXyMH5xMSoExd3UgIeLXVRQ=\",\n      \"company\": {\n        \"addresses\": [],\n        \"image\": \"\",\n        \"name\": \"GEICO\"\n      },\n      \"dateOnIndeedTimestamp\": -2023808358,\n      \"datePublishedTimestamp\": -2106525952,\n      \"description\": \"At GEICO, we offer a rewarding career...\",\n      \"id\": \"2bcbfe330ed5c52f\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"New York, NY\"\n      },\n      \"title\": \"Senior Staff ML Engineer, Fraud Risk Modeling\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 20,\n    \"nextToken\": \"dD1BQlFBQVFBVUFBQUFBQ...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "indeed",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                      "key": "query",
+                      "value": "Java"
+                    },
+                    {
+                      "description": "**Optional**\n\nLocation of the job offer, like city, towns or provinces.",
+                      "key": "location",
+                      "value": "Zurich"
+                    },
+                    {
+                      "description": "**Required if token is not set**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "ch"
+                    },
+                    {
+                      "description": "**Optional**\n\nSorting of the results, can either be by `relevance` or by `date`, will be set to `relevance` by default.\n\n**Allowed values**\n\nrelevance or date",
+                      "key": "sortType",
+                      "value": "relevance"
+                    },
+                    {
+                      "description": "**Optional**\n\nDistance of the job offers from the location.\n\n**Allowed format**\n\n^[0-9]+$",
+                      "key": "radius",
+                      "value": "20"
+                    },
+                    {
+                      "description": "**Optional**\n\nType of the distance, can either be `km` or `miles`, will be set to `km` by default.\n\n**Allowed values**\n\nkm or miles",
+                      "key": "radiusType",
+                      "value": "km"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/indeed/search?location=zurich&query=java&countryCode=ch"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Job search Indeed"
+    },
+    {
+      "item": [
+        {
+          "description": "Get a list of jobs, use the `/v2/linkedin/get` for full details on a specific job.",
+          "name": "Search and list jobs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "linkedin",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                  "key": "query",
+                  "value": "java"
+                },
+                {
+                  "description": "**Optional**\n\nID of organizations like companies and schools the job-postings should be from, use the `Search and list organization IDs` endpoint for valid IDs. Will return everything by default.\n\n**Allowed format**\n\n^\\d+(;\\d+)*;?$",
+                  "key": "organizationIds",
+                  "value": "1441"
+                },
+                {
+                  "description": "**Optional**\n\nLocation of the job offer, like country or city. Will be `Worldwide` if empty.",
+                  "key": "location",
+                  "value": "Worldwide"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to LinkedIn, will return everything by default.\n\n**Allowed values**\n\nmonth, week or day",
+                  "key": "datePosted",
+                  "value": "month"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\ncontractor, fulltime, parttime, intern or temporary separated by a semicolon (;)",
+                  "key": "employmentTypes",
+                  "value": "contractor;fulltime;parttime;intern;temporary"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by experience-levels, like intern, director, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nintern, entry, associate, midSenior or director separated by a semicolon (;)",
+                  "key": "experienceLevels",
+                  "value": "intern;entry;associate;midSenior;director"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by workplace-types, like remote, hybrid, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nremote, hybrid or onSite separated by a semicolon (;)",
+                  "key": "workplaceTypes",
+                  "value": "remote;hybrid;onSite"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/linkedin/search?query=web&location=Switzerland&datePosted=month&jobTypes=contractor;fulltime;parttime;intern;temporary&experienceLevels=intern;entry;associate;midSenior;director&workplaceTypes=remote;hybrid;onSite"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/linkedin/search?token=dD0xMDtxPXJlYW...\",\n    \"self\": \"/v2/linkedin/search?query=react\"\n  },\n  \"data\": [\n    {\n      \"companyName\": \"Netflix\",\n      \"datePosted\": \"2025-12-18\",\n      \"id\": \"4344905017\",\n      \"linkedinCompanyName\": \"netflix\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/hr-coordinator-netflix-animation-studios-at-netflix-4344905017\",\n      \"location\": \"Burbank, CA\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"HR Coordinator - Netflix Animation Studios\"\n    },\n    {\n      \"companyName\": \"Prospect Equities®\",\n      \"datePosted\": \"2025-12-10\",\n      \"id\": \"4342895176\",\n      \"linkedinCompanyName\": \"prospect-equities-\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/front-end-developer-intern-at-prospect-equities%C2%AE-4342895176\",\n      \"location\": \"Chicago, IL\",\n      \"postedTimeAgo\": \"3 weeks ago\",\n      \"title\": \"Front-End Developer Intern\"\n    },\n    {\n      \"companyName\": \"LinkedIn\",\n      \"datePosted\": \"2025-12-17\",\n      \"id\": \"4344456572\",\n      \"linkedinCompanyName\": \"linkedin\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/software-engineer-frontend-at-linkedin-4344456572\",\n      \"location\": \"Mountain View, CA\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"Software Engineer - Frontend\"\n    },\n    {\n      \"companyName\": \"Notion\",\n      \"datePosted\": \"2025-12-19\",\n      \"id\": \"4334367155\",\n      \"linkedinCompanyName\": \"notionhq\",\n      \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/software-engineer-fullstack-early-career-at-notion-4334367155\",\n      \"location\": \"New York, NY\",\n      \"postedTimeAgo\": \"2 weeks ago\",\n      \"title\": \"Software Engineer, Fullstack, Early Career\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10,\n    \"nextToken\": \"dD0xMDtxPXJlYW...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "linkedin",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                      "key": "query",
+                      "value": "java"
+                    },
+                    {
+                      "description": "**Optional**\n\nID of organizations like companies and schools the job-postings should be from, use the `Search and list organization IDs` endpoint for valid IDs. Will return everything by default.\n\n**Allowed format**\n\n^\\d+(;\\d+)*;?$",
+                      "key": "organizationIds",
+                      "value": "1441"
+                    },
+                    {
+                      "description": "**Optional**\n\nLocation of the job offer, like country or city. Will be `Worldwide` if empty.",
+                      "key": "location",
+                      "value": "Worldwide"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to LinkedIn, will return everything by default.\n\n**Allowed values**\n\nmonth, week or day",
+                      "key": "datePosted",
+                      "value": "month"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\ncontractor, fulltime, parttime, intern or temporary separated by a semicolon (;)",
+                      "key": "employmentTypes",
+                      "value": "contractor;fulltime;parttime;intern;temporary"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by experience-levels, like intern, director, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nintern, entry, associate, midSenior or director separated by a semicolon (;)",
+                      "key": "experienceLevels",
+                      "value": "intern;entry;associate;midSenior;director"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by workplace-types, like remote, hybrid, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nremote, hybrid or onSite separated by a semicolon (;)",
+                      "key": "workplaceTypes",
+                      "value": "remote;hybrid;onSite"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/linkedin/search?query=web&location=Switzerland&datePosted=month&jobTypes=contractor;fulltime;parttime;intern;temporary&experienceLevels=intern;entry;associate;midSenior;director&workplaceTypes=remote;hybrid;onSite"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get job details by its ID, use the `/v2/linkedin/search` endpoint to search for jobs.",
+          "name": "Get job details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "linkedin",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/linkedin/get?id=4175032607"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/linkedin/get?id=4344905017\"\n  },\n  \"data\": {\n    \"acceptingApplications\": true,\n    \"applicants\": 200,\n    \"companyName\": \"Netflix\",\n    \"description\": \"Netflix Animation Studios is on a mission...\",\n    \"employmentType\": \"Full-time\",\n    \"id\": \"4344905017\",\n    \"industries\": \"Entertainment Providers\",\n    \"jobFunction\": \"Other\",\n    \"linkedinCompanyName\": \"netflix\",\n    \"linkedinUrl\": \"https://www.linkedin.com/jobs/view/hr-coordinator-netflix-animation-studios-at-netflix-4344905017\",\n    \"location\": \"Burbank, CA\",\n    \"postedTimeAgo\": \"2 weeks ago\",\n    \"seniorityLevel\": \"Not Applicable\",\n    \"title\": \"HR Coordinator - Netflix Animation Studios\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "linkedin",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.\n\n**Allowed format**\n\n^\\d+$",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/linkedin/get?id=4175032607"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get a list of organization IDs, use the IDs in the organizationIds in `/v2/linkedin/search` to filter by companies or schools.",
+          "name": "Search and list organization IDs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "linkedin",
+                "organizations"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nOrganization name or query, can be companies or schools, etc.",
+                  "key": "query",
+                  "value": "google"
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/linkedin/organizations?query=google"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/linkedin/organizations?query=google\"\n  },\n  \"data\": [\n    {\n      \"displayName\": \"Google\",\n      \"id\": 1441\n    },\n    {\n      \"displayName\": \"Google DeepMind\",\n      \"id\": 1594050\n    },\n    {\n      \"displayName\": \"Google Operations Center\",\n      \"id\": 14547137\n    },\n    {\n      \"displayName\": \"Google Fiber\",\n      \"id\": 2171947\n    },\n    {\n      \"displayName\": \"Google for Startups\",\n      \"id\": 18336369\n    },\n    {\n      \"displayName\": \"Google Developers Group\",\n      \"id\": 11162656\n    },\n    {\n      \"displayName\": \"Mandiant (part of Google Cloud)\",\n      \"id\": 28103\n    },\n    {\n      \"displayName\": \"Google Cloud Security\",\n      \"id\": 18451491\n    },\n    {\n      \"displayName\": \"Google Summer of Code\",\n      \"id\": 19184331\n    },\n    {\n      \"displayName\": \"Google Cloud Skills Boost\",\n      \"id\": 98808973\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 10\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "linkedin",
+                    "organizations"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nOrganization name or query, can be companies or schools, etc.",
+                      "key": "query",
+                      "value": "google"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/linkedin/organizations?query=google"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Job search LinkedIn"
+    },
+    {
+      "item": [
+        {
+          "description": "Get a list of jobs, use the `/v2/xing/get` for more information on a specific job.",
+          "name": "Search and list jobs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "xing",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Required if token is not set**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                  "key": "query",
+                  "value": "Java"
+                },
+                {
+                  "description": "**Optional**\n\nLocation of the job offer, like country or city in any combination - locations should be written in german, as Xing is a german speaking job-market.",
+                  "key": "location",
+                  "value": "Schweiz"
+                },
+                {
+                  "description": "**Optional**\n\nThe maximum age of when a result was added to Xing, will return everything by default.\n\n**Allowed values**\n\nweek, day, month or empty",
+                  "key": "datePosted",
+                  "value": "week"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\ncontractor, fulltime, intern, parttime, seasonal, temporary or voluntary separated by a semicolon (;)",
+                  "key": "employmentTypes",
+                  "value": "contractor;fulltime;intern;parttime;seasonal;temporary;voluntary"
+                },
+                {
+                  "description": "**Optional**\n\nFilter by career-levels, like intern, manager, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nstudent, entry, professional, manager, executive or seniorExecutive separated by a semicolon (;)",
+                  "key": "careerLevels",
+                  "value": "student;entry;professional;manager;executive;seniorExecutive"
+                },
+                {
+                  "description": "**Optional**\n\nWorkplace type, like remote, hybrid or on-site. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nremote, hybrid or onSite separated by a semicolon (;)",
+                  "key": "remoteOptions",
+                  "value": "remote;hybrid;onSite"
+                },
+                {
+                  "description": "**Optional**\n\nMinimum yearly salary for the posted jobs. Will return everything by default.\n\n**Allowed format**\n\n^[0-9]+$",
+                  "key": "minimumSalary",
+                  "value": "1000"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/xing/search?location=zurich&query=java&datePosted=day"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/xing/search?token=dD0xO3E9a290bGluO2w9O2RwPWRheTtldD07Y2w9O3JvPTttcz0w\",\n    \"self\": \"/v2/xing/search?query=kotlin&datePosted=day\"\n  },\n  \"data\": [\n    {\n      \"company\": \"Amadeus Fire AG\",\n      \"dateUpdated\": \"2026-01-03T12:05:52Z\",\n      \"employmentType\": \"Full-time\",\n      \"id\": \"a2Fpc2Vyc2xhdXRlcm4...\",\n      \"image\": \"https://www.xing.com/imagecache/public/...\",\n      \"location\": \"Kaiserslautern\",\n      \"salary\": {\n        \"currency\": \"EUR\",\n        \"maximum\": 70000,\n        \"minimum\": 60000\n      },\n      \"title\": \"Java/Kotlin Full-Stack Entwickler (m/w/d)\"\n    },\n    {\n      \"company\": \"Finanz Informatik GmbH & Co. KG\",\n      \"dateUpdated\": \"2026-01-03T09:19:07Z\",\n      \"employmentType\": \"Full-time\",\n      \"id\": \"bXVlbnN0ZXItc29mdHdhcmV...\",\n      \"image\": \"https://www.xing.com/imagecache/public/...\",\n      \"location\": \"Münster\",\n      \"salary\": {\n        \"currency\": \"EUR\",\n        \"maximum\": 73500,\n        \"minimum\": 49500\n      },\n      \"title\": \"Softwareentwickler (m/w/d) im Umfeld Nachwuchskunden\"\n    },\n    {\n      \"company\": \"Finanz Informatik GmbH & Co. KG\",\n      \"dateUpdated\": \"2026-01-03T09:19:06Z\",\n      \"employmentType\": \"Full-time\",\n      \"id\": \"bXVlbnN0ZXItamF2YS1zb2...\",\n      \"image\": \"https://www.xing.com/imagecache/public/...\",\n      \"location\": \"Münster\",\n      \"salary\": {\n        \"currency\": \"EUR\",\n        \"maximum\": 77500,\n        \"minimum\": 49000\n      },\n      \"title\": \"Java Softwareentwickler (m/w/d)\"\n    },\n    {\n      \"company\": \"Coperitus GmbH\",\n      \"dateUpdated\": \"2026-01-03T09:25:04Z\",\n      \"employmentType\": \"Full-time\",\n      \"id\": \"Y29idXJnLXNvZnR3YXJlZW50d2lja2xlci1...\",\n      \"image\": \"https://www.xing.com/assets/companies/img/default-logo_96x96.png\",\n      \"location\": \"Coburg\",\n      \"salary\": {\n        \"currency\": \"EUR\",\n        \"maximum\": 65500,\n        \"minimum\": 49500\n      },\n      \"title\": \"Softwareentwickler Java / Full-Stack Softwareentwickler Java / Softwarearchitekt (m/w/d)\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 4,\n    \"nextToken\": \"dD0xO3E9a290bGluO2w9O2RwPWRheTtldD07Y2w9O3JvPTttcz0w\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "xing",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required if token is not set**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                      "key": "query",
+                      "value": "Java"
+                    },
+                    {
+                      "description": "**Optional**\n\nLocation of the job offer, like country or city in any combination - locations should be written in german, as Xing is a german speaking job-market.",
+                      "key": "location",
+                      "value": "Schweiz"
+                    },
+                    {
+                      "description": "**Optional**\n\nThe maximum age of when a result was added to Xing, will return everything by default.\n\n**Allowed values**\n\nweek, day, month or empty",
+                      "key": "datePosted",
+                      "value": "week"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by job-types, like fulltime, contractor, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\ncontractor, fulltime, intern, parttime, seasonal, temporary or voluntary separated by a semicolon (;)",
+                      "key": "employmentTypes",
+                      "value": "contractor;fulltime;intern;parttime;seasonal;temporary;voluntary"
+                    },
+                    {
+                      "description": "**Optional**\n\nFilter by career-levels, like intern, manager, etc. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nstudent, entry, professional, manager, executive or seniorExecutive separated by a semicolon (;)",
+                      "key": "careerLevels",
+                      "value": "student;entry;professional;manager;executive;seniorExecutive"
+                    },
+                    {
+                      "description": "**Optional**\n\nWorkplace type, like remote, hybrid or on-site. Multiple values are possible and need to be separated by semicolon (;). Will return everything by default.\n\n**Allowed values**\n\nremote, hybrid or onSite separated by a semicolon (;)",
+                      "key": "remoteOptions",
+                      "value": "remote;hybrid;onSite"
+                    },
+                    {
+                      "description": "**Optional**\n\nMinimum yearly salary for the posted jobs. Will return everything by default.\n\n**Allowed format**\n\n^[0-9]+$",
+                      "key": "minimumSalary",
+                      "value": "1000"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/xing/search?location=zurich&query=java&datePosted=day"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get job details by its ID, use the `/v2/xing/search` endpoint to search for jobs and get valid IDs.",
+          "name": "Get job details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "xing",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/xing/search` endpoint.",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/xing/get?id=MTEyNDYwODI1Mi5SZXRybw=="
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/xing/get?id=Y29idXJnLXNvZnR3YXJ...\"\n  },\n  \"data\": {\n    \"applyUrl\": \"https://www.it-jobs.de/_sde-72645/...\",\n    \"benefits\": \"\",\n    \"company\": \"Coperitus GmbH\",\n    \"country\": \"Germany\",\n    \"countryCode\": \"DE\",\n    \"dateUpdated\": \"2026-01-03T09:25:04Z\",\n    \"description\": \"Coperitus - Unternehmen, Team und Karrieremöglichkeiten...\",\n    \"employmentType\": \"EmploymentType:FULL_TIME.ef2fe9\",\n    \"id\": \"Y29idXJnLXNvZnR3YXJ...\",\n    \"location\": \"Coburg\",\n    \"remoteOptions\": [\n      \"PARTLY_REMOTE\"\n    ],\n    \"responsibility\": \"\",\n    \"salary\": {\n      \"currency\": \"EUR\",\n      \"maximum\": 65500,\n      \"minimum\": 49500\n    },\n    \"skills\": \"\",\n    \"title\": \"Softwareentwickler Java / Full-Stack Softwareentwickler Java / Softwarearchitekt (m/w/d)\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "xing",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/xing/search` endpoint.",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/xing/get?id=MTEyNDYwODI1Mi5SZXRybw=="
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Job search Xing"
+    },
+    {
+      "item": [
+        {
+          "description": "Find job titles from your query to use in `/v2/salary/range`.",
+          "name": "Get job titles",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "salary",
+                "titles"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nSearch query for valid job titles.",
+                  "key": "query",
+                  "value": "programming"
+                },
+                {
+                  "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "de"
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/salary/range?query=programming&countryCode=de"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/salary/titles?query=programming&countryCode=ch\"\n  },\n  \"data\": {\n    \"jobTitles\": [\n      {\n        \"count\": 31,\n        \"jobTitle\": \"software engineer\"\n      },\n      {\n        \"count\": 19,\n        \"jobTitle\": \"full stack developer\"\n      },\n      {\n        \"count\": 15,\n        \"jobTitle\": \"machine learning engineer\"\n      },\n      {\n        \"count\": 14,\n        \"jobTitle\": \"senior software engineer\"\n      },\n      {\n        \"count\": 13,\n        \"jobTitle\": \"data scientist\"\n      },\n      {\n        \"count\": 9,\n        \"jobTitle\": \"data engineer\"\n      },\n      {\n        \"count\": 9,\n        \"jobTitle\": \"r&d engineer\"\n      },\n      {\n        \"count\": 8,\n        \"jobTitle\": \"back end developer\"\n      },\n      {\n        \"count\": 8,\n        \"jobTitle\": \"senior engineer\"\n      },\n      {\n        \"count\": 7,\n        \"jobTitle\": \"ai developer\"\n      },\n      {\n        \"count\": 6,\n        \"jobTitle\": \"automation engineer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"application developer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"computer vision engineer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"model\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"physicist\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"quantitative analyst\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"research engineer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"research intern\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"senior java developer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"student researcher\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"devops engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"electronics engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"infrastructure engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"senior research engineer\"\n      }\n    ]\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 25\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "salary",
+                    "titles"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nSearch query for valid job titles.",
+                      "key": "query",
+                      "value": "programming"
+                    },
+                    {
+                      "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "de"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/salary/range?query=programming&countryCode=de"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get salary ranges for jobs, use `/v2/salary/titles` to get a list of valid job titles.",
+          "name": "Get job salaries",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-for-docs"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "salary",
+                "range"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nSearch query for valid job titles.",
+                  "key": "query",
+                  "value": "developer"
+                },
+                {
+                  "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "de"
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/salary/range?query=developer&countryCode=de"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/salary/range?query=full%20stack%20developer&countryCode=ch\"\n  },\n  \"data\": {\n    \"country\": \"Switzerland\",\n    \"countryCode\": \"CH\",\n    \"currency\": \"CHF\",\n    \"dailySalary\": {\n      \"max\": 1006.060859127188,\n      \"mean\": 849.55082984955,\n      \"median\": 841.320182765177,\n      \"min\": 703.555499159465\n    },\n    \"hourlySalary\": {\n      \"max\": 81.7029013044972,\n      \"mean\": 68.9926130955627,\n      \"median\": 68.3241965278114,\n      \"min\": 57.1362308637385\n    },\n    \"lastUpdatedTimestamp\": 1761956344,\n    \"monthlySalary\": {\n      \"max\": 9668.88383959108,\n      \"mean\": 8164.72305340431,\n      \"median\": 8085.62130736033,\n      \"min\": 6761.61519888569\n    },\n    \"weeklySalary\": {\n      \"max\": 2498.644050376289,\n      \"mean\": 2109.937094995819,\n      \"median\": 2089.495531067015,\n      \"min\": 1747.344354107386\n    },\n    \"yearlySalary\": {\n      \"max\": 136562.9666689806,\n      \"mean\": 115318.253968254,\n      \"median\": 114201.0237597132,\n      \"min\": 95500.8092302153\n    }\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-for-docs"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "salary",
+                    "range"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nSearch query for valid job titles.",
+                      "key": "query",
+                      "value": "developer"
+                    },
+                    {
+                      "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "de"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/salary/range?query=developer&countryCode=de"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Salary range"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://jobs-api14.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "jobs-api14.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}
