@@ -3,7 +3,7 @@
   <h1>Postman Collections</h1>
 </div>
 
-This repository contains the generated Postman collections for my [APIs](https://rapidapi.com/user/Pat92) published on RapidAPI. Each folder corresponds to a different API.
+This repository contains the generated Postman collections for my <a href="https://rapidapi.com/user/Pat92" target="_blank">APIs</a> published on RapidAPI. Each folder corresponds to a different API.
 
 ### How to use a collection
 1. Subscribe to the API you want to use.
