@@ -24,16 +24,12 @@
                 "value": "application/json"
               },
               {
-                "key": "x-rapidapi-host",
-                "value": "{{x-rapidapi-host}}"
-              },
-              {
-                "key": "x-rapidapi-key",
-                "value": "{{x-rapidapi-key}}"
+                "key": "X-APIHUB-TOKEN",
+                "value": "{{X-APIHUB-TOKEN}}"
               },
               {
                 "key": "postman-collection",
-                "value": "generated-rapidapi"
+                "value": "generated-apihub"
               }
             ],
             "method": "GET",
@@ -75,16 +71,12 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "x-rapidapi-host",
-                    "value": "{{x-rapidapi-host}}"
-                  },
-                  {
-                    "key": "x-rapidapi-key",
-                    "value": "{{x-rapidapi-key}}"
+                    "key": "X-APIHUB-TOKEN",
+                    "value": "{{X-APIHUB-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
-                    "value": "generated-rapidapi"
+                    "value": "generated-apihub"
                   }
                 ],
                 "method": "GET",
@@ -120,16 +112,12 @@
                 "value": "application/json"
               },
               {
-                "key": "x-rapidapi-host",
-                "value": "{{x-rapidapi-host}}"
-              },
-              {
-                "key": "x-rapidapi-key",
-                "value": "{{x-rapidapi-key}}"
+                "key": "X-APIHUB-TOKEN",
+                "value": "{{X-APIHUB-TOKEN}}"
               },
               {
                 "key": "postman-collection",
-                "value": "generated-rapidapi"
+                "value": "generated-apihub"
               }
             ],
             "method": "GET",
@@ -171,16 +159,12 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "x-rapidapi-host",
-                    "value": "{{x-rapidapi-host}}"
-                  },
-                  {
-                    "key": "x-rapidapi-key",
-                    "value": "{{x-rapidapi-key}}"
+                    "key": "X-APIHUB-TOKEN",
+                    "value": "{{X-APIHUB-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
-                    "value": "generated-rapidapi"
+                    "value": "generated-apihub"
                   }
                 ],
                 "method": "GET",
@@ -221,16 +205,12 @@
                 "value": "application/json"
               },
               {
-                "key": "x-rapidapi-host",
-                "value": "{{x-rapidapi-host}}"
-              },
-              {
-                "key": "x-rapidapi-key",
-                "value": "{{x-rapidapi-key}}"
+                "key": "X-APIHUB-TOKEN",
+                "value": "{{X-APIHUB-TOKEN}}"
               },
               {
                 "key": "postman-collection",
-                "value": "generated-rapidapi"
+                "value": "generated-apihub"
               }
             ],
             "method": "GET",
@@ -272,16 +252,12 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "x-rapidapi-host",
-                    "value": "{{x-rapidapi-host}}"
-                  },
-                  {
-                    "key": "x-rapidapi-key",
-                    "value": "{{x-rapidapi-key}}"
+                    "key": "X-APIHUB-TOKEN",
+                    "value": "{{X-APIHUB-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
-                    "value": "generated-rapidapi"
+                    "value": "generated-apihub"
                   }
                 ],
                 "method": "GET",
@@ -317,16 +293,12 @@
                 "value": "application/json"
               },
               {
-                "key": "x-rapidapi-host",
-                "value": "{{x-rapidapi-host}}"
-              },
-              {
-                "key": "x-rapidapi-key",
-                "value": "{{x-rapidapi-key}}"
+                "key": "X-APIHUB-TOKEN",
+                "value": "{{X-APIHUB-TOKEN}}"
               },
               {
                 "key": "postman-collection",
-                "value": "generated-rapidapi"
+                "value": "generated-apihub"
               }
             ],
             "method": "GET",
@@ -389,16 +361,12 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "x-rapidapi-host",
-                    "value": "{{x-rapidapi-host}}"
-                  },
-                  {
-                    "key": "x-rapidapi-key",
-                    "value": "{{x-rapidapi-key}}"
+                    "key": "X-APIHUB-TOKEN",
+                    "value": "{{X-APIHUB-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
-                    "value": "generated-rapidapi"
+                    "value": "generated-apihub"
                   }
                 ],
                 "method": "GET",
@@ -447,14 +415,10 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://forex-api2.p.rapidapi.com"
+      "value": "https://apihub.cloud/api/r"
     },
     {
-      "key": "x-rapidapi-host",
-      "value": "forex-api2.p.rapidapi.com"
-    },
-    {
-      "key": "x-rapidapi-key",
+      "key": "X-APIHUB-TOKEN",
       "value": "API_KEY"
     }
   ]

@@ -33,16 +33,12 @@
                 "value": "application/json"
               },
               {
-                "key": "x-rapidapi-host",
-                "value": "{{x-rapidapi-host}}"
-              },
-              {
-                "key": "x-rapidapi-key",
-                "value": "{{x-rapidapi-key}}"
+                "key": "X-APIHUB-TOKEN",
+                "value": "{{X-APIHUB-TOKEN}}"
               },
               {
                 "key": "postman-collection",
-                "value": "generated-rapidapi"
+                "value": "generated-apihub"
               }
             ],
             "method": "POST",
@@ -93,16 +89,12 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "x-rapidapi-host",
-                    "value": "{{x-rapidapi-host}}"
-                  },
-                  {
-                    "key": "x-rapidapi-key",
-                    "value": "{{x-rapidapi-key}}"
+                    "key": "X-APIHUB-TOKEN",
+                    "value": "{{X-APIHUB-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
-                    "value": "generated-rapidapi"
+                    "value": "generated-apihub"
                   }
                 ],
                 "method": "POST",
@@ -147,16 +139,12 @@
                 "value": "application/json"
               },
               {
-                "key": "x-rapidapi-host",
-                "value": "{{x-rapidapi-host}}"
-              },
-              {
-                "key": "x-rapidapi-key",
-                "value": "{{x-rapidapi-key}}"
+                "key": "X-APIHUB-TOKEN",
+                "value": "{{X-APIHUB-TOKEN}}"
               },
               {
                 "key": "postman-collection",
-                "value": "generated-rapidapi"
+                "value": "generated-apihub"
               }
             ],
             "method": "POST",
@@ -207,16 +195,12 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "x-rapidapi-host",
-                    "value": "{{x-rapidapi-host}}"
-                  },
-                  {
-                    "key": "x-rapidapi-key",
-                    "value": "{{x-rapidapi-key}}"
+                    "key": "X-APIHUB-TOKEN",
+                    "value": "{{X-APIHUB-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
-                    "value": "generated-rapidapi"
+                    "value": "generated-apihub"
                   }
                 ],
                 "method": "POST",
@@ -244,14 +228,10 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://google-translate-api9.p.rapidapi.com"
+      "value": "https://apihub.cloud/api/r"
     },
     {
-      "key": "x-rapidapi-host",
-      "value": "google-translate-api9.p.rapidapi.com"
-    },
-    {
-      "key": "x-rapidapi-key",
+      "key": "X-APIHUB-TOKEN",
       "value": "API_KEY"
     }
   ]
