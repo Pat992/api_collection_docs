@@ -3,7 +3,7 @@
   <h1>Postman Collections</h1>
 </div>
 
-This repository contains the generated Postman collections for my APIs published on [APIHUB](https://apihub.cloud/user/Pat) and [RapidAPI](https://rapidapi.com/user/Pat92). Each folder corresponds to a different API.
+This repository contains the generated Postman collections for my APIs published on [LimitPear](https://limitpear.com/user/Pat) and [RapidAPI](https://rapidapi.com/user/Pat92). Each folder corresponds to a different API.
 
 ### How to use a collection
 1. Subscribe to the API you want to use.

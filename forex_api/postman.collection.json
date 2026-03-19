@@ -346,7 +346,7 @@
                   "value": "us;ch;de"
                 },
                 {
-                  "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semikolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
+                  "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semicolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
                   "key": "includeVolatilities",
                   "value": "none;low;medium;high"
                 },
@@ -418,7 +418,7 @@
                       "value": "us;ch;de"
                     },
                     {
-                      "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semikolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
+                      "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semicolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
                       "key": "includeVolatilities",
                       "value": "none;low;medium;high"
                     },

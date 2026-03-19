@@ -24,8 +24,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -82,8 +82,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -134,8 +134,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -187,8 +187,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -239,8 +239,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -297,8 +297,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -349,8 +349,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -402,8 +402,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -454,8 +454,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -512,8 +512,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -564,8 +564,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -617,8 +617,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -669,8 +669,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -727,8 +727,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -779,8 +779,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -832,8 +832,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -884,8 +884,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -942,8 +942,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -986,10 +986,10 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://apihub.cloud/api/r"
+      "value": "https://limitpear.com/api/r"
     },
     {
-      "key": "X-APIHUB-TOKEN",
+      "key": "X-LIMITPEAR-TOKEN",
       "value": "API_KEY"
     }
   ]

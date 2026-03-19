@@ -24,8 +24,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -71,8 +71,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -112,8 +112,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -159,8 +159,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -205,8 +205,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -252,8 +252,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -293,8 +293,8 @@
                 "value": "application/json"
               },
               {
-                "key": "X-APIHUB-TOKEN",
-                "value": "{{X-APIHUB-TOKEN}}"
+                "key": "X-LIMITPEAR-TOKEN",
+                "value": "{{X-LIMITPEAR-TOKEN}}"
               },
               {
                 "key": "postman-collection",
@@ -318,7 +318,7 @@
                   "value": "us;ch;de"
                 },
                 {
-                  "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semikolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
+                  "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semicolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
                   "key": "includeVolatilities",
                   "value": "none;low;medium;high"
                 },
@@ -361,8 +361,8 @@
                     "value": "application/json"
                   },
                   {
-                    "key": "X-APIHUB-TOKEN",
-                    "value": "{{X-APIHUB-TOKEN}}"
+                    "key": "X-LIMITPEAR-TOKEN",
+                    "value": "{{X-LIMITPEAR-TOKEN}}"
                   },
                   {
                     "key": "postman-collection",
@@ -386,7 +386,7 @@
                       "value": "us;ch;de"
                     },
                     {
-                      "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semikolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
+                      "description": "**Optional**\n\nFilter results by only returning news with specific impacts, multiple values are possible, separated by a semicolon (;), if empty, the API will return news for all volatilities.\n\n**Allowed values**\n\nnone, low, medium or high separated by a semicolon (;)",
                       "key": "includeVolatilities",
                       "value": "none;low;medium;high"
                     },
@@ -415,10 +415,10 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://apihub.cloud/api/r"
+      "value": "https://limitpear.com/api/r"
     },
     {
-      "key": "X-APIHUB-TOKEN",
+      "key": "X-LIMITPEAR-TOKEN",
       "value": "API_KEY"
     }
   ]
