@@ -193,7 +193,7 @@ Get job details by its ID, use the `/v2/bing/search` endpoint to search for jobs
 
 ### 2.1 Search and list jobs
 
-Get a list of job from Indeed.
+Get a list of jobs from Indeed.
 
 **URL:** `/v2/indeed/search`
 
@@ -345,7 +345,7 @@ Get job details by its ID, use the `/v2/indeed/search` endpoint to search for jo
 
 | key | type | allowedValues | description | isRequired | example |
 | --- | ---| --- | --- | --- | --- |
-| id | string | - | **Required**<br>ID of the job, to get allowed values, use the `/v2/indeed/search` endpoint. | true |  |
+| id | string | - | **Required**<br>ID of the job, to get allowed values, use the `search` endpoint. | true |  |
 
 
 #### Request example
@@ -357,6 +357,35 @@ Get job details by its ID, use the `/v2/indeed/search` endpoint to search for jo
 #### Example response
 
 ```json
+{
+    "data": {
+        "applyUrl": "https://careers.alaska.edu/jobs/junior-software-engineer-alaska-satellite-facility-asf-fairbanks-alaska-united-states",
+        "company": {
+            "addresses": [
+                "2025 Yukon Drive, Fairbanks, AK 99775"
+            ],
+            "image": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/20a95ff792bbde097a2d4106d339944a",
+            "name": "University of Alaska"
+        },
+        "dateOnIndeedTimestamp": 1788250823727,
+        "datePublishedTimestamp": 1788238800000,
+        "description": "533372\nFairbanks, Alaska, United States\nHybrid\nOn Campus\nRemote\nRemote within Alaska...",
+        "id": "aWQ9NTI1YjhhN2I1MGY2NzAwYTtjYz11cw==",
+        "location": {
+            "country": "United States",
+            "countryCode": "US",
+            "location": "Fairbanks, AK"
+        },
+        "title": "Junior Software Engineer - Alaska Satellite Facility (ASF)"
+    },
+    "_links": {
+        "self": "/v2/indeed/get?id=aWQ9NTI1YjhhN2I1MGY2NzAwYTtjYz11cw%3D%3D"
+    },
+    "errors": [],
+    "warnings": [],
+    "hasError": false,
+    "hasWarning": false
+}
 
 ```
 
@@ -830,7 +859,7 @@ Get salary ranges for jobs, use `/v2/salary/titles` to get a list of valid job t
 
 | key | type | allowedValues | description | isRequired | example |
 | --- | ---| --- | --- | --- | --- |
-| query | string | - | **Required**<br>Search query for valid job titles. | true | developer |
+| query | string | - | **Required**<br>Job title, valid titles can be found with the `job title search` endpoint. | true | developer |
 | countryCode | string | - | **Required**<br>Parameter to get the titles for the required county.<br>**Allowed format**<br>^[A-Za-z]{2}$ | true | de |
 
 

@@ -281,7 +281,7 @@
     {
       "item": [
         {
-          "description": "Get a list of job from Indeed.",
+          "description": "Get a list of jobs from Indeed.",
           "name": "Search and list jobs",
           "request": {
             "body": {},
@@ -487,7 +487,7 @@
               ],
               "query": [
                 {
-                  "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/indeed/search` endpoint.",
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.",
                   "key": "id",
                   "value": ""
                 }
@@ -498,7 +498,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n  \"key\": \"value\"\n}",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/indeed/get?id=aWQ9NTI1YjhhN2I1MGY2NzAwYTtjYz11cw%3D%3D\"\n  },\n  \"data\": {\n    \"applyUrl\": \"https://careers.alaska.edu/jobs/junior-software-engineer-alaska-satellite-facility-asf-fairbanks-alaska-united-states\",\n    \"company\": {\n      \"addresses\": [\n        \"2025 Yukon Drive, Fairbanks, AK 99775\"\n      ],\n      \"image\": \"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/20a95ff792bbde097a2d4106d339944a\",\n      \"name\": \"University of Alaska\"\n    },\n    \"dateOnIndeedTimestamp\": 1788250823727,\n    \"datePublishedTimestamp\": 1788238800000,\n    \"description\": \"533372\\nFairbanks, Alaska, United States\\nHybrid\\nOn Campus\\nRemote\\nRemote within Alaska...\",\n    \"id\": \"aWQ9NTI1YjhhN2I1MGY2NzAwYTtjYz11cw==\",\n    \"location\": {\n      \"country\": \"United States\",\n      \"countryCode\": \"US\",\n      \"location\": \"Fairbanks, AK\"\n    },\n    \"title\": \"Junior Software Engineer - Alaska Satellite Facility (ASF)\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -544,7 +544,7 @@
                   ],
                   "query": [
                     {
-                      "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/indeed/search` endpoint.",
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.",
                       "key": "id",
                       "value": ""
                     }
@@ -1408,7 +1408,7 @@
               ],
               "query": [
                 {
-                  "description": "**Required**\n\nSearch query for valid job titles.",
+                  "description": "**Required**\n\nJob title, valid titles can be found with the `job title search` endpoint.",
                   "key": "query",
                   "value": "developer"
                 },
@@ -1470,7 +1470,7 @@
                   ],
                   "query": [
                     {
-                      "description": "**Required**\n\nSearch query for valid job titles.",
+                      "description": "**Required**\n\nJob title, valid titles can be found with the `job title search` endpoint.",
                       "key": "query",
                       "value": "developer"
                     },

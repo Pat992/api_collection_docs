@@ -1,0 +1,547 @@
+{
+  "info": {
+    "_exporter_id": "",
+    "_postman_id": "",
+    "description": "This API allows you to discover worldwide employment opportunities from Indeed, as well as income information for different locations and jobs.",
+    "name": "Indeed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "description": "Get a list of jobs from Indeed.",
+          "name": "Search and list jobs",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-rapidapi"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "jobs",
+                "search"
+              ],
+              "query": [
+                {
+                  "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                  "key": "query",
+                  "value": "Java"
+                },
+                {
+                  "description": "**Optional**\n\nLocation of the job offer, like city, towns or provinces.",
+                  "key": "location",
+                  "value": "Zurich"
+                },
+                {
+                  "description": "**Required if token is not set**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "ch"
+                },
+                {
+                  "description": "**Optional**\n\nSorting of the results, can either be by `relevance` or by `date`, will be set to `relevance` by default.\n\n**Allowed values**\n\nrelevance or date",
+                  "key": "sortType",
+                  "value": "relevance"
+                },
+                {
+                  "description": "**Optional**\n\nDistance of the job offers from the location.\n\n**Allowed format**\n\n^[0-9]+$",
+                  "key": "radius",
+                  "value": "20"
+                },
+                {
+                  "description": "**Optional**\n\nType of the distance, can either be `km` or `miles`, will be set to `km` by default.\n\n**Allowed values**\n\nkm or miles",
+                  "key": "radiusType",
+                  "value": "km"
+                },
+                {
+                  "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                  "key": "token",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/jobs/search?location=zurich&query=java&countryCode=ch"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"next\": \"/v2/indeed/search?token=dD1BQlFBQVFBVUFBQUFBQ...\",\n    \"self\": \"/v2/indeed/search?countryCode=us&query=java\"\n  },\n  \"data\": [\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/Jo4WXZskvtPZ9WgFwqnpCUVCv-vN0fkkJ6ip_S65XSY=\",\n      \"company\": {\n        \"addresses\": [\n          \"Bethesda, MD\"\n        ],\n        \"image\": \"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/debbff68624041821d0c56fbccbcc330\",\n        \"name\": \"Lockheed Martin\"\n      },\n      \"dateOnIndeedTimestamp\": -2023594907,\n      \"datePublishedTimestamp\": -749158656,\n      \"description\": \"Job ID: 691465BR\\nDate posted: Nov. 30, 2025...\",\n      \"id\": \"56a1b7550fa78bba\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"King of Prussia, PA\"\n      },\n      \"title\": \"Java Software Engineer III\"\n    },\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/q7vuN9iOmz3dRG2xAe7KoxP7I6Z7SQdG-wpiMdJf9nw=\",\n      \"company\": {\n        \"addresses\": [\n          \"Bethesda, MD\"\n        ],\n        \"image\": \"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/debbff68624041821d0c56fbccbcc330\",\n        \"name\": \"Lockheed Martin\"\n      },\n      \"dateOnIndeedTimestamp\": -2023595367,\n      \"datePublishedTimestamp\": -749158656,\n      \"description\": \"Job ID: 698997BR\\nDate posted: Nov. 30, 2025...\",\n      \"id\": \"6c588ac5af1876cc\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"King of Prussia, PA\"\n      },\n      \"title\": \"Java Software Engineer III- Space Mission Applications\"\n    },\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/TgmDjYI9cOSltDS4D0tQ4RxKivariwQLFIXeX5CIrPk=\",\n      \"company\": {\n        \"addresses\": [],\n        \"image\": \"\",\n        \"name\": \"GEICO\"\n      },\n      \"dateOnIndeedTimestamp\": -2023807598,\n      \"datePublishedTimestamp\": -2106525952,\n      \"description\": \"At GEICO, we offer a rewarding career...\",\n      \"id\": \"5f9b5f874e6ab3a5\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"Chevy Chase, MD\"\n      },\n      \"title\": \"Staff Engineer - Applied AI\"\n    },\n    {\n      \"applyUrl\": \"https://click.appcast.io/t/oP7qQFlODRAEfszK6tVzUXyMH5xMSoExd3UgIeLXVRQ=\",\n      \"company\": {\n        \"addresses\": [],\n        \"image\": \"\",\n        \"name\": \"GEICO\"\n      },\n      \"dateOnIndeedTimestamp\": -2023808358,\n      \"datePublishedTimestamp\": -2106525952,\n      \"description\": \"At GEICO, we offer a rewarding career...\",\n      \"id\": \"2bcbfe330ed5c52f\",\n      \"location\": {\n        \"country\": \"United States\",\n        \"countryCode\": \"US\",\n        \"location\": \"New York, NY\"\n      },\n      \"title\": \"Senior Staff ML Engineer, Fraud Risk Modeling\"\n    }\n  ],\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 20,\n    \"nextToken\": \"dD1BQlFBQVFBVUFBQUFBQ...\",\n    \"position\": 0\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-rapidapi"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "jobs",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Optional**\n\nKeywords, job-title, company-name, position or any other relevant search-query.",
+                      "key": "query",
+                      "value": "Java"
+                    },
+                    {
+                      "description": "**Optional**\n\nLocation of the job offer, like city, towns or provinces.",
+                      "key": "location",
+                      "value": "Zurich"
+                    },
+                    {
+                      "description": "**Required if token is not set**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "ch"
+                    },
+                    {
+                      "description": "**Optional**\n\nSorting of the results, can either be by `relevance` or by `date`, will be set to `relevance` by default.\n\n**Allowed values**\n\nrelevance or date",
+                      "key": "sortType",
+                      "value": "relevance"
+                    },
+                    {
+                      "description": "**Optional**\n\nDistance of the job offers from the location.\n\n**Allowed format**\n\n^[0-9]+$",
+                      "key": "radius",
+                      "value": "20"
+                    },
+                    {
+                      "description": "**Optional**\n\nType of the distance, can either be `km` or `miles`, will be set to `km` by default.\n\n**Allowed values**\n\nkm or miles",
+                      "key": "radiusType",
+                      "value": "km"
+                    },
+                    {
+                      "description": "**Optional**\n\nPagination token from previous response as the `meta.nextToken` to get the next batch of results.",
+                      "key": "token",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/jobs/search?location=zurich&query=java&countryCode=ch"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get job details by its ID, use the `/v1/jobs/search` endpoint to search for jobs and get valid IDs.",
+          "name": "Get job details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-rapidapi"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "jobs",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/jobs/get?id=aWQ9ODRiYzJmMjY5ZTZlNGFkYjtjYz11cw=="
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/indeed/get?id=aWQ9NTI1YjhhN2I1MGY2NzAwYTtjYz11cw%3D%3D\"\n  },\n  \"data\": {\n    \"applyUrl\": \"https://careers.alaska.edu/jobs/junior-software-engineer-alaska-satellite-facility-asf-fairbanks-alaska-united-states\",\n    \"company\": {\n      \"addresses\": [\n        \"2025 Yukon Drive, Fairbanks, AK 99775\"\n      ],\n      \"image\": \"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/20a95ff792bbde097a2d4106d339944a\",\n      \"name\": \"University of Alaska\"\n    },\n    \"dateOnIndeedTimestamp\": 1788250823727,\n    \"datePublishedTimestamp\": 1788238800000,\n    \"description\": \"533372\\nFairbanks, Alaska, United States\\nHybrid\\nOn Campus\\nRemote\\nRemote within Alaska....\",\n    \"id\": \"aWQ9NTI1YjhhN2I1MGY2NzAwYTtjYz11cw==\",\n    \"location\": {\n      \"country\": \"United States\",\n      \"countryCode\": \"US\",\n      \"location\": \"Fairbanks, AK\"\n    },\n    \"title\": \"Junior Software Engineer - Alaska Satellite Facility (ASF)\"\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-rapidapi"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "jobs",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `search` endpoint.",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/jobs/get?id=aWQ9ODRiYzJmMjY5ZTZlNGFkYjtjYz11cw=="
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Job search"
+    },
+    {
+      "item": [
+        {
+          "description": "Find job titles from your query to use in `/v1/salary/range`.",
+          "name": "Get job titles",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-rapidapi"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "salary",
+                "autocomplete"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nSearch query for valid job titles.",
+                  "key": "query",
+                  "value": "programming"
+                },
+                {
+                  "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "de"
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/salary/range?query=programming&countryCode=de"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/salary/titles?query=programming&countryCode=ch\"\n  },\n  \"data\": {\n    \"jobTitles\": [\n      {\n        \"count\": 31,\n        \"jobTitle\": \"software engineer\"\n      },\n      {\n        \"count\": 19,\n        \"jobTitle\": \"full stack developer\"\n      },\n      {\n        \"count\": 15,\n        \"jobTitle\": \"machine learning engineer\"\n      },\n      {\n        \"count\": 14,\n        \"jobTitle\": \"senior software engineer\"\n      },\n      {\n        \"count\": 13,\n        \"jobTitle\": \"data scientist\"\n      },\n      {\n        \"count\": 9,\n        \"jobTitle\": \"data engineer\"\n      },\n      {\n        \"count\": 9,\n        \"jobTitle\": \"r&d engineer\"\n      },\n      {\n        \"count\": 8,\n        \"jobTitle\": \"back end developer\"\n      },\n      {\n        \"count\": 8,\n        \"jobTitle\": \"senior engineer\"\n      },\n      {\n        \"count\": 7,\n        \"jobTitle\": \"ai developer\"\n      },\n      {\n        \"count\": 6,\n        \"jobTitle\": \"automation engineer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"application developer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"computer vision engineer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"model\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"physicist\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"quantitative analyst\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"research engineer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"research intern\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"senior java developer\"\n      },\n      {\n        \"count\": 5,\n        \"jobTitle\": \"student researcher\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"devops engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"electronics engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"infrastructure engineer\"\n      },\n      {\n        \"count\": 4,\n        \"jobTitle\": \"senior research engineer\"\n      }\n    ]\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"meta\": {\n    \"count\": 25\n  },\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-rapidapi"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "salary",
+                    "autocomplete"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nSearch query for valid job titles.",
+                      "key": "query",
+                      "value": "programming"
+                    },
+                    {
+                      "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "de"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/salary/range?query=programming&countryCode=de"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "description": "Get salary ranges for jobs, use `/v1/salary/autocomplete` to get a list of valid job titles.",
+          "name": "Get job salaries",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-rapidapi"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "salary",
+                "range"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nJob title, valid titles can be found with the `job title search` endpoint.",
+                  "key": "query",
+                  "value": "developer"
+                },
+                {
+                  "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                  "key": "countryCode",
+                  "value": "de"
+                }
+              ],
+              "raw": "{{baseUrl}}/v1/salary/range?query=developer&countryCode=de"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"_links\": {\n    \"self\": \"/v2/salary/range?query=full%20stack%20developer&countryCode=ch\"\n  },\n  \"data\": {\n    \"country\": \"Switzerland\",\n    \"countryCode\": \"CH\",\n    \"currency\": \"CHF\",\n    \"dailySalary\": {\n      \"max\": 1006.060859127188,\n      \"mean\": 849.55082984955,\n      \"median\": 841.320182765177,\n      \"min\": 703.555499159465\n    },\n    \"hourlySalary\": {\n      \"max\": 81.7029013044972,\n      \"mean\": 68.9926130955627,\n      \"median\": 68.3241965278114,\n      \"min\": 57.1362308637385\n    },\n    \"lastUpdatedTimestamp\": 1761956344,\n    \"monthlySalary\": {\n      \"max\": 9668.88383959108,\n      \"mean\": 8164.72305340431,\n      \"median\": 8085.62130736033,\n      \"min\": 6761.61519888569\n    },\n    \"weeklySalary\": {\n      \"max\": 2498.644050376289,\n      \"mean\": 2109.937094995819,\n      \"median\": 2089.495531067015,\n      \"min\": 1747.344354107386\n    },\n    \"yearlySalary\": {\n      \"max\": 136562.9666689806,\n      \"mean\": 115318.253968254,\n      \"median\": 114201.0237597132,\n      \"min\": 95500.8092302153\n    }\n  },\n  \"errors\": [],\n  \"hasError\": false,\n  \"hasWarning\": false,\n  \"warnings\": []\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-rapidapi"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "salary",
+                    "range"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nJob title, valid titles can be found with the `job title search` endpoint.",
+                      "key": "query",
+                      "value": "developer"
+                    },
+                    {
+                      "description": "**Required**\n\nParameter to get the titles for the required county.\n\n**Allowed format**\n\n^[A-Za-z]{2}$",
+                      "key": "countryCode",
+                      "value": "de"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v1/salary/range?query=developer&countryCode=de"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Salary range"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "indeed-api7.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-host",
+      "value": "indeed-api7.p.rapidapi.com"
+    },
+    {
+      "key": "x-rapidapi-key",
+      "value": "API_KEY"
+    }
+  ]
+}
