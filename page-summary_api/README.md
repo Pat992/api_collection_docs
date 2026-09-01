@@ -22,7 +22,7 @@ Get website metadata and page content as a JSON.
 
 | key | type | allowedValues | description | isRequired | example |
 | --- | ---| --- | --- | --- | --- |
-| url | string | - | **Required**<br>URL of the website you want information from.<br>**Allowed format**<br>https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z]{2,63}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)? | true | https://www.rapidapi.com |
+| url | string | - | **Required**<br>URL of the website you want information from.<br>**Allowed format**<br>https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z]{2,63}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)? | true | https://www.bbc.com |
 | getMetadata | boolean | true or false | **Optional**<br>Get the website metadata from the head, is set to true by default.<br>**Allowed values**<br>true or false separated by a semicolon (;) | false | true |
 | getBody | boolean | true or false | **Optional**<br>Get the website body, is set to true by default.<br>**Allowed values**<br>true or false separated by a semicolon (;) | false | true |
 | additionalHeaders | object | - | **Optional**<br>Set additional headers, this will add or overwrite headers in the backend. | false | {"Cookies": "cookie1;cookie2",
