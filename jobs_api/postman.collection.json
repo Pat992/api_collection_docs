@@ -447,6 +447,114 @@
               "status": "OK"
             }
           ]
+        },
+        {
+          "description": "Get job details by its ID, use the `/v2/indeed/search` endpoint to search for jobs and get valid IDs.",
+          "name": "Get job details",
+          "request": {
+            "body": {},
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-rapidapi-host",
+                "value": "{{x-rapidapi-host}}"
+              },
+              {
+                "key": "x-rapidapi-key",
+                "value": "{{x-rapidapi-key}}"
+              },
+              {
+                "key": "postman-collection",
+                "value": "generated-rapidapi"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2",
+                "indeed",
+                "get"
+              ],
+              "query": [
+                {
+                  "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/indeed/search` endpoint.",
+                  "key": "id",
+                  "value": ""
+                }
+              ],
+              "raw": "{{baseUrl}}/v2/indeed/get?id=aWQ9ODRiYzJmMjY5ZTZlNGFkYjtjYz11cw=="
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"key\": \"value\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "Successful response",
+              "originalRequest": {
+                "body": {},
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "x-rapidapi-host",
+                    "value": "{{x-rapidapi-host}}"
+                  },
+                  {
+                    "key": "x-rapidapi-key",
+                    "value": "{{x-rapidapi-key}}"
+                  },
+                  {
+                    "key": "postman-collection",
+                    "value": "generated-rapidapi"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "indeed",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "**Required**\n\nID of the job, to get allowed values, use the `/v2/indeed/search` endpoint.",
+                      "key": "id",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/indeed/get?id=aWQ9ODRiYzJmMjY5ZTZlNGFkYjtjYz11cw=="
+                }
+              },
+              "status": "OK"
+            }
+          ]
         }
       ],
       "name": "Job search Indeed"

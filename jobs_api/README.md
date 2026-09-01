@@ -8,6 +8,7 @@ This API allows you to discover employment opportunities from various providers,
 	- 1.2 Get job details
 - 2 Job search Indeed
 	- 2.1 Search and list jobs
+	- 2.2 Get job details
 - 3 Job search LinkedIn
 	- 3.1 Search and list jobs
 	- 3.2 Get job details
@@ -332,6 +333,32 @@ parameters are present.
 
 `/v2/indeed/search?token=dG9rZW49ODY5ODU...`
 
+
+
+### 2.2 Get job details
+
+Get job details by its ID, use the `/v2/indeed/search` endpoint to search for jobs and get valid IDs.
+
+**URL:** `/v2/indeed/get`
+
+#### Request parameters
+
+| key | type | allowedValues | description | isRequired | example |
+| --- | ---| --- | --- | --- | --- |
+| id | string | - | **Required**<br>ID of the job, to get allowed values, use the `/v2/indeed/search` endpoint. | true |  |
+
+
+#### Request example
+
+```
+/v2/indeed/get?id=aWQ9ODRiYzJmMjY5ZTZlNGFkYjtjYz11cw==
+```
+
+#### Example response
+
+```json
+
+```
 
 
 ## 3 Job search LinkedIn
