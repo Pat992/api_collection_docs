@@ -533,7 +533,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "indeed-api7.p.rapidapi.com"
+      "value": "https://indeed-api7.p.rapidapi.com"
     },
     {
       "key": "x-rapidapi-host",
